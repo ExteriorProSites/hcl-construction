@@ -597,38 +597,6 @@
     margin: 0;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #sbs-r .cs-left:before,
-  body.dark-mode #sbs-r .cs-left:after {
-    background: var(--accent);
-  }
-  body.dark-mode #sbs-r .cs-picture2 {
-    /* 6px - 12px */
-    border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-    background-color: var(--dark);
-  }
-  body.dark-mode #sbs-r .cs-topper {
-    color: var(--primaryLight);
-  }
-  body.dark-mode #sbs-r .cs-title,
-  body.dark-mode #sbs-r .cs-text,
-  body.dark-mode #sbs-r .cs-h3,
-  body.dark-mode #sbs-r .cs-flex-p,
-  body.dark-mode #sbs-r .cs-name {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #sbs-r .cs-flex-group {
-    background-color: var(--accent);
-  }
-  body.dark-mode #sbs-r .cs-job {
-    opacity: 0.8;
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #sbs-r .cs-quote-icon {
-    opacity: 0.2;
-  }
-}
 /*-- -------------------------- -->
 <---            CTA             -->
 <--- -------------------------- -*/
@@ -904,25 +872,6 @@
     /* 240px - 360px */
     height: clamp(15rem, 31.25vw, 22.5rem);
     aspect-ratio: none;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #meet-team-220 .cs-topper {
-    color: var(--primaryLight);
-  }
-  body.dark-mode #meet-team-220 .cs-title,
-  body.dark-mode #meet-team-220 .cs-text,
-  body.dark-mode #meet-team-220 .cs-name,
-  body.dark-mode #meet-team-220 .cs-job-title {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #meet-team-220 .cs-item {
-    background-color: var(--medium);
-  }
-  body.dark-mode #meet-team-220 .cs-link img {
-    /* makes the image 50% brighter */
-    filter: brightness(150%);
   }
 }
 /*-- -------------------------- -->
@@ -1245,34 +1194,6 @@
     grid-column: span 4;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #reviews-864 .cs-topper {
-    color: var(--primaryLight);
-  }
-  body.dark-mode #reviews-864 .cs-title,
-  body.dark-mode #reviews-864 .cs-text,
-  body.dark-mode #reviews-864 .cs-review,
-  body.dark-mode #reviews-864 .cs-name,
-  body.dark-mode #reviews-864 .cs-job,
-  body.dark-mode #reviews-864 .cs-desc {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #reviews-864 .cs-text,
-  body.dark-mode #reviews-864 .cs-desc {
-    opacity: 0.8;
-  }
-  body.dark-mode #reviews-864 .cs-item {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  body.dark-mode #reviews-864 .cs-flex-group {
-    border-color: var(--accent);
-  }
-  body.dark-mode #reviews-864 .cs-quote1,
-  body.dark-mode #reviews-864 .cs-quote2 {
-    opacity: 0.2;
-  }
-}
 /*-- -------------------------- -->
 <---            FAQ             -->
 <--- -------------------------- -*/
@@ -1411,34 +1332,5 @@
     /* clips the text so it doesn't show up */
     overflow: hidden;
     transition: opacity 0.3s, padding-bottom 0.3s;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #faq-326 .cs-topper {
-    color: var(--secondaryLight);
-  }
-  body.dark-mode #faq-326 .cs-title,
-  body.dark-mode #faq-326 .cs-item-p {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #faq-326 .cs-faq-item {
-    background-color: var(--accent);
-  }
-  body.dark-mode #faq-326 .cs-faq-item.active .cs-button {
-    background-color: var(--secondaryLight);
-    color: var(--primary);
-  }
-  body.dark-mode #faq-326 .cs-faq-item.active .cs-button:before,
-  body.dark-mode #faq-326 .cs-faq-item.active .cs-button:after {
-    background-color: var(--primary);
-  }
-  body.dark-mode #faq-326 .cs-button {
-    background-color: var(--accent);
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #faq-326 .cs-button:before,
-  body.dark-mode #faq-326 .cs-button:after {
-    background-color: var(--bodyTextColorWhite);
   }
 }

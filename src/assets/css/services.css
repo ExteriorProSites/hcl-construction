@@ -641,34 +641,6 @@
     grid-column: span 4;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #reviews-864 .cs-topper {
-    color: var(--primaryLight);
-  }
-  body.dark-mode #reviews-864 .cs-title,
-  body.dark-mode #reviews-864 .cs-text,
-  body.dark-mode #reviews-864 .cs-review,
-  body.dark-mode #reviews-864 .cs-name,
-  body.dark-mode #reviews-864 .cs-job,
-  body.dark-mode #reviews-864 .cs-desc {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #reviews-864 .cs-text,
-  body.dark-mode #reviews-864 .cs-desc {
-    opacity: 0.8;
-  }
-  body.dark-mode #reviews-864 .cs-item {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  body.dark-mode #reviews-864 .cs-flex-group {
-    border-color: var(--accent);
-  }
-  body.dark-mode #reviews-864 .cs-quote1,
-  body.dark-mode #reviews-864 .cs-quote2 {
-    opacity: 0.2;
-  }
-}
 /*-- -------------------------- -->
 <---            FAQ             -->
 <--- -------------------------- -*/
@@ -807,34 +779,5 @@
     /* clips the text so it doesn't show up */
     overflow: hidden;
     transition: opacity 0.3s, padding-bottom 0.3s;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #faq-326 .cs-topper {
-    color: var(--secondaryLight);
-  }
-  body.dark-mode #faq-326 .cs-title,
-  body.dark-mode #faq-326 .cs-item-p {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #faq-326 .cs-faq-item {
-    background-color: var(--accent);
-  }
-  body.dark-mode #faq-326 .cs-faq-item.active .cs-button {
-    background-color: var(--secondaryLight);
-    color: var(--primary);
-  }
-  body.dark-mode #faq-326 .cs-faq-item.active .cs-button:before,
-  body.dark-mode #faq-326 .cs-faq-item.active .cs-button:after {
-    background-color: var(--primary);
-  }
-  body.dark-mode #faq-326 .cs-button {
-    background-color: var(--accent);
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #faq-326 .cs-button:before,
-  body.dark-mode #faq-326 .cs-button:after {
-    background-color: var(--bodyTextColorWhite);
   }
 }
