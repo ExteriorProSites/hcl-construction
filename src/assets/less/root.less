@@ -219,98 +219,6 @@
 }
 
 /*-- -------------------------- -->
-<---      Dark Mode Toggle      -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #dark-mode-toggle {
-            .cs-sun {
-                transform: translate(-50%, -50%);
-                opacity: 1;
-            }
-
-            .cs-moon {
-                transform: translate(-50%, -150%);
-                opacity: 0;
-            }
-        }
-    }
-
-    #dark-mode-toggle {
-        display: block;
-        position: absolute;
-        bottom: (16/16rem);
-        right: (90/16rem);
-        width: (48/16rem);
-        height: (48/16rem);
-        background: transparent;
-        border: none;
-        overflow: hidden;
-        padding: 0;
-        z-index: 1000;
-
-        img,
-        svg {
-            //center image inside button
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: (20/16rem);
-            height: (20/16rem);
-            pointer-events: none;
-        }
-
-        .cs-moon {
-            z-index: 2;
-            // Transition properties
-            transition:
-                transform 0.3s,
-                opacity 0.3s;
-            fill: #1a1a1a;
-        }
-
-        .cs-sun {
-            z-index: 1;
-            // Transition property
-            transform: translate(-50%, 100%);
-            opacity: 0;
-            transition:
-                transform 0.3s,
-                opacity 0.3s;
-        }
-    }
-}
-
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-    #dark-mode-toggle {
-        margin-left: (16/16rem);
-        position: relative;
-        bottom: auto;
-        right: auto;
-        order: 3;
-    }
-}
-
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    #dark-mode-toggle {
-        position: relative;
-        transform: none;
-        bottom: auto;
-        right: auto;
-        margin: 0;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
-
-/*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
 
@@ -806,46 +714,6 @@ html {
     }
 }
 
-/* Dark Mode */
-@media only screen and (max-width: 63.9375rem) {
-    body.dark-mode {
-        #cs-navigation {
-            background-color: var(--dark);
-
-            .cs-logo {
-                /* makes it white */
-                filter: grayscale(1) brightness(1000%);
-            }
-
-            .cs-social-link {
-                background-color: var(--secondary);
-                &:hover {
-                    background-color: #fff;
-                }
-            }
-
-            .cs-top-link,
-            .cs-desc {
-                color: var(--bodyTextColorWhite);
-                opacity: 0.8;
-            }
-
-            .cs-link-icon {
-                filter: grayscale(1) brightness(1000%);
-            }
-
-            .cs-ul-wrapper {
-                background-color: var(--medium);
-            }
-
-            .cs-li-link,
-            .cs-header {
-                color: var(--bodyTextColorWhite);
-            }
-        }
-    }
-}
-
 /*-- -------------------------- -->
 <---     Navigation Dropdown    -->
 <--- -------------------------- -*/
@@ -1071,30 +939,6 @@ html {
 
                 &:before {
                     display: none;
-                }
-            }
-        }
-    }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 64rem) {
-    body.dark-mode {
-        #cs-navigation {
-            .cs-drop-ul {
-                background-color: var(--dark);
-            }
-
-            .cs-li-link {
-                &.cs-drop-link {
-                    &:hover {
-                        color: var(--bodyTextColorWhite);
-                        background-color: rgba(255, 255, 255, 0.2);
-                    }
-
-                    &:before {
-                        display: none;
-                    }
                 }
             }
         }
@@ -1367,48 +1211,6 @@ html {
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 64rem) {
-    body.dark-mode {
-        #cs-navigation {
-            background-color: var(--dark);
-
-            .cs-li-link,
-            .cs-top-link,
-            .cs-header,
-            .cs-desc {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-li-link,
-            .cs-top-link {
-                &:hover {
-                    color: var(--secondary);
-                }
-            }
-
-            .cs-desc,
-            .cs-top-link {
-                opacity: 0.8;
-            }
-
-            .cs-social-link {
-                background-color: var(--secondary);
-                &:hover {
-                    background-color: #fff;
-                }
-            }
-
-            .cs-logo,
-            .cs-link-icon {
-                /* turns it white */
-                filter: grayscale(1) brightness(1000%);
-            }
-        }
-    }
-}
-
-                                
 
 /*-- -------------------------- -->
 <---   Interior Page Header     -->
@@ -1580,18 +1382,6 @@ html {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
-            }
-        }
-    }
-}
-                                
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #cta {
-            &:after {
-                display: none;
             }
         }
     }
@@ -1834,22 +1624,6 @@ html {
         .credit {
             .copyright {
                 display: inline-block;
-            }
-        }
-    }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #footer {
-            background: #061623;
-
-            a {
-                color: var(--bodyTextColorWhite);
-            }
-            li {
-                color: var(--bodyTextColorWhite);
             }
         }
     }
