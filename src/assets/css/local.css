@@ -608,6 +608,25 @@
     position: relative;
     z-index: 1;
   }
+  #cta-1071 .cs-button-solid {
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    background-color: #574419;
+    color: white;
+    width: auto;
+    padding: 0 1.875rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 3.125em;
+    font-weight: bold;
+    transition: background-color, color;
+    text-align: center;
+  }
+  #cta-1071 .cs-button-solid:hover {
+    background-color: #69531f;
+  }
   #cta-1071 .cs-container {
     width: 100%;
     max-width: 80rem;
@@ -711,8 +730,8 @@
     display: block;
     height: 100%;
     width: 100%;
-    background: #000;
-    opacity: 0.8;
+    background: #020209;
+    opacity: 0.65;
     top: 0;
     left: 0;
     z-index: 1;

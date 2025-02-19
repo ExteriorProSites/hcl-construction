@@ -14,6 +14,25 @@
     position: relative;
     z-index: 1;
   }
+  #hero-1427 .cs-button-solid {
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    background-color: #574419;
+    color: white;
+    width: auto;
+    padding: 0 1.875rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 3.125em;
+    font-weight: bold;
+    transition: background-color, color;
+    text-align: center;
+  }
+  #hero-1427 .cs-button-solid:hover {
+    background-color: #69531f;
+  }
   #hero-1427 .cs-background {
     width: 100%;
     height: 100%;
@@ -28,8 +47,8 @@
     content: "";
     width: 100%;
     height: 100%;
-    background: #000;
-    opacity: 0.6;
+    background: #020209;
+    opacity: 0.43;
     position: absolute;
     display: block;
     top: 0;
@@ -52,18 +71,19 @@
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 3rem;
   }
   #hero-1427 .cs-content {
-    text-align: left;
+    text-align: center;
     width: 100%;
     max-width: 39.375rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    margin-top: 6rem;
   }
   #hero-1427 .cs-topper {
     /* 13px - 16px */
@@ -80,8 +100,8 @@
   }
   #hero-1427 .cs-title {
     /* 39px - 61px */
-    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
-    font-weight: 700;
+    font-size: clamp(3.0625rem, 6vw, 4rem);
+    font-weight: 900;
     line-height: 1.2em;
     text-align: inherit;
     max-width: 51.8125rem;

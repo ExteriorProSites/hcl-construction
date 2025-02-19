@@ -699,6 +699,30 @@
         position: relative;
         z-index: 1;
 
+        .cs-button-solid {
+            z-index: 1;
+            position: relative;
+            display: inline-block;
+            background-color: #574419;
+            color: white;
+            width: auto;
+            padding: 0 (30/16rem);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: (16/16rem);
+            line-height: (50/16em);
+            font-weight: bold;
+    
+            // Transition Properties
+            transition: background-color, color;
+            // transition-delay: 0.1s;
+            text-align: center;
+    
+            &:hover {
+                background-color: #69531f;
+            }
+        }
+
         .cs-container {
             width: 100%;
             max-width: (1280/16rem);
@@ -812,8 +836,8 @@
                 display: block;
                 height: 100%;
                 width: 100%;
-                background: #000;
-                opacity: .8;
+                background: #020209;
+                opacity: .65;
                 top: 0;
                 left: 0;
                 z-index: 1;

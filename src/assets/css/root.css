@@ -5,9 +5,9 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #b28d3e;
+    --primary: #0a5c0a;
     --primaryLight: #f6f6ea;
-    --secondary: #574419;
+    --secondary: #105c10;
     --secondaryLight: #CBEAED;
     --headerColor: #1a1a1a;
     --bodyTextColor: #242424;
@@ -210,38 +210,43 @@ html {
     width: 100%;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: white;
     position: fixed;
     z-index: 10000;
+    box-shadow: 2px 2px 10px #19ee061e;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
   }
   #cs-navigation:before {
     content: "";
-    width: 100%;
-    height: 0vh;
+    width: 0%;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.6);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
     position: absolute;
     display: block;
     top: 100%;
     right: 0;
-    z-index: -1100;
+    z-index: -11;
     opacity: 0;
-    transition: height 0.5s, opacity 0.5s;
+    transition: width 0.5s, opacity 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  #cs-navigation.cs-active {
+    border-bottom-right-radius: 0rem;
+    border-bottom-left-radius: 0rem;
   }
   #cs-navigation.cs-active:before {
-    height: 150vh;
     opacity: 1;
+    width: 100%;
   }
   #cs-navigation.cs-active .cs-ul-wrapper {
     opacity: 1;
-    transform: scaleY(1);
-    transition-delay: 0.15s;
+    transform: scaleX(1);
+    transition-delay: 0.2s;
   }
   #cs-navigation.cs-active .cs-li {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateX(0);
   }
   #cs-navigation .cs-top-bar {
     width: 100%;
@@ -258,6 +263,7 @@ html {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    transition: visibility 0.3s, opacity 0.3s, height 0.3s, overflow 0.3s, padding 0.3s, gap 0.3s;
     gap: 1rem;
   }
   #cs-navigation .cs-top-contact {
@@ -267,7 +273,7 @@ html {
     box-sizing: border-box;
     border-bottom: 1px solid #e8e8e8;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     /* 16px - 20px */
     gap: clamp(1rem, 2vw, 1.5rem);
@@ -305,32 +311,29 @@ html {
     width: 1rem;
     height: auto;
     display: block;
-    filter: brightness(0) saturate(100%) invert(10%) sepia(2%) saturate(0%) hue-rotate(339deg) brightness(96%) contrast(89%);
   }
   #cs-navigation .cs-top-social {
-    height: 2rem;
-    visibility: visible;
-    opacity: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+    display: none;
   }
   #cs-navigation .cs-social-link {
+    color: transparent;
     text-decoration: none;
     width: 2rem;
     height: 2rem;
-    background-color: #f7f7f7;
+    background: var(--svgBackgroundAlt);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s;
+  }
+  #cs-navigation .cs-social-link:hover {
+    transform: translateY(-0.5rem);
   }
   #cs-navigation .cs-social-icon {
     width: 0.75rem;
     height: auto;
-    opacity: 0.6;
+    opacity: 1;
     display: block;
   }
   #cs-navigation .cs-container {
@@ -345,21 +348,20 @@ html {
     position: relative;
   }
   #cs-navigation .cs-logo {
+    /* 32px - 48px */
+    height: 4rem;
     width: auto;
     /* 32px - 48px */
-    height: clamp(2rem, 6.4vw, 3rem);
     margin: 0 auto 0 0;
+    /* prevents padding and border from affecting height and width */
     padding: 0;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     order: 1;
     z-index: 10;
   }
   #cs-navigation .cs-logo img {
-    width: 100px;
+    width: auto;
     height: 100%;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
@@ -373,6 +375,7 @@ html {
     height: clamp(3rem, 7.2vw, 3.5rem);
     margin: 0 0 0 auto;
     background-color: var(--primary);
+    border-radius: 0.25rem;
     border: none;
     display: flex;
     justify-content: center;
@@ -405,7 +408,7 @@ html {
     width: 100%;
     height: 2px;
     border-radius: 2px;
-    background-color: #fafbfc;
+    background-color: #fff;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -433,24 +436,23 @@ html {
     transition: bottom 0.3s, opacity 0.3s;
   }
   #cs-navigation .cs-ul-wrapper {
-    width: 100%;
-    height: auto;
-    padding-bottom: 3rem;
+    min-width: 70vw;
+    height: 100vh;
     opacity: 0;
     background-color: #fff;
-    box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
     overflow: hidden;
     position: absolute;
     top: 100%;
-    left: 0;
-    z-index: -1;
-    transform: scaleY(0);
-    transform-origin: top;
+    left: auto;
+    right: 0;
     transition: transform 0.4s, opacity 0.3s;
+    transform: scaleX(0);
+    box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    transform-origin: top right;
   }
   #cs-navigation .cs-ul {
     margin: 0;
-    padding: 3rem 0 0 0;
+    padding: 3rem clamp(1.75rem, 3vw, 2.5rem) 2rem 4.375rem;
     width: 100%;
     height: auto;
     max-height: 65vh;
@@ -458,17 +460,17 @@ html {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     gap: 1.25rem;
   }
   #cs-navigation .cs-li {
     width: 100%;
-    text-align: center;
     list-style: none;
     margin-right: 0;
     /* transition from these values */
-    transform: translateY(-4.375rem);
+    transform: translateX(-2.5rem);
     opacity: 0;
+    text-align: right;
     transition: transform 0.6s, opacity 0.9s;
   }
   #cs-navigation .cs-li:nth-of-type(1) {
@@ -529,23 +531,10 @@ html {
   #cs-navigation .cs-button-solid {
     display: none;
   }
-  #cs-navigation .cs-donate {
-    text-decoration: none;
-    margin-right: 2rem;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-    order: 1;
-  }
   #cs-navigation .cs-flex {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-  #cs-navigation .cs-donate-icon {
-    width: 3.5rem;
-    height: auto;
   }
   #cs-navigation .cs-desc {
     font-size: 1rem;
@@ -559,6 +548,14 @@ html {
     font-weight: 700;
     margin: 0;
     color: var(--headerColor);
+  }
+  body.scroll #cs-navigation .cs-top-container {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    gap: 0;
   }
 }
 /* Tablet - 768px */
@@ -577,23 +574,17 @@ html {
   #cs-navigation .cs-donate {
     display: flex;
   }
-  #cs-navigation .cs-logo {
-    width: 18.4%;
-    max-width: 12.3125rem;
-    height: 3.75rem;
-    /* margin-right auto pushes everything away from it to the right */
-    margin: 0 auto 0 0;
-    padding: 0;
+  #cs-navigation .cs-top-social {
+    height: 2rem;
+    opacity: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    gap: 0.5rem;
+    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
   }
-  #cs-navigation .cs-logo img {
-    width: 100%;
-    height: 100%;
-    /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
-    object-fit: contain;
+  #cs-navigation .cs-logo {
+    height: 5rem;
   }
 }
 /*-- -------------------------- -->
@@ -602,9 +593,10 @@ html {
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
   #cs-navigation .cs-li {
-    text-align: center;
+    text-align: right;
     width: 100%;
     display: block;
+    padding-right: 1.5rem;
   }
   #cs-navigation .cs-dropdown {
     position: relative;
@@ -624,45 +616,51 @@ html {
     position: relative;
     transition: opacity 0.3s;
   }
-  #cs-navigation .cs-dropdown-button {
-    border: none;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    cursor: pointer;
-    appearance: none;
-  }
   #cs-navigation .cs-drop-icon {
-    width: 0.9375rem;
-    height: auto;
     position: absolute;
     top: 50%;
     right: -1.25rem;
     transform: translateY(-50%);
+    height: auto;
+    width: 0.9375rem;
   }
   #cs-navigation .cs-drop-ul {
     width: 100%;
     height: 0;
     margin: 0;
     padding: 0;
-    background-color: var(--primary);
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     gap: 0.75rem;
     transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, visibility 0.3s;
   }
   #cs-navigation .cs-drop-li {
     list-style: none;
+    background-color: #f7f7f7;
+    padding: 0.0625rem 0.5rem 0.0625rem;
+  }
+  #cs-navigation .cs-drop-li:hover {
+    color: var(--primary);
+  }
+  #cs-navigation .cs-li-link {
+    color: var(--headerColor);
   }
   #cs-navigation .cs-li-link.cs-drop-link {
     /* 14px - 16px */
-    font-size: clamp(0.875rem, 2vw, 1.25rem);
-    color: #fff;
+    color: var(--headerColor);
+  }
+  #cs-navigation .cs-dropdown-button {
+    background-color: white;
+    border: none;
+    font-family: inherit;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    cursor: pointer;
+    appearance: none;
   }
 }
 /* Desktop - 1024px */
@@ -755,14 +753,6 @@ html {
   #cs-navigation .cs-drop-li:nth-of-type(13) {
     transition-delay: 0.65s;
   }
-  #cs-navigation .cs-dropdown-button {
-    border: none;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-    appearance: none;
-  }
   #cs-navigation .cs-li-link.cs-drop-link {
     font-size: 1rem;
     white-space: nowrap;
@@ -783,21 +773,43 @@ html {
   #cs-navigation .cs-li-link.cs-drop-link:before {
     display: none;
   }
+  #cs-navigation .cs-dropdown-button {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    appearance: none;
+  }
 }
 /*-- -------------------------- -->
 <---     Desktop Navigation     -->
 <--- -------------------------- -*/
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
+  body.scroll #cs-navigation .cs-top-container {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    gap: 0;
+  }
+  body.scroll #cs-navigation .cs-top-social {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
   #cs-navigation {
     width: 100%;
     padding: 0;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: fixed;
     z-index: 10000;
+    background-color: white;
+    box-shadow: 2px 2px 10px #0281ff18;
   }
   #cs-navigation .cs-top-bar {
     width: 100%;
@@ -815,6 +827,7 @@ html {
     justify-content: space-between;
     align-items: center;
     gap: 3.125rem;
+    transition: visibility 0.3s, opacity 0.3s, height 0.3s, overflow 0.3s, padding 0.3s, gap 0.3s;
   }
   #cs-navigation .cs-top-contact {
     display: flex;
@@ -855,35 +868,37 @@ html {
     width: 1rem;
     height: auto;
     display: block;
-    filter: brightness(0) saturate(100%) invert(10%) sepia(2%) saturate(0%) hue-rotate(339deg) brightness(96%) contrast(89%);
   }
   #cs-navigation .cs-top-social {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    transition: visibility 0.3s, opacity 0.3s, height 0.3s, overflow 0.3s, padding 0.3s, gap 0.3s;
   }
   #cs-navigation .cs-social-link {
     text-decoration: none;
+    color: transparent;
     width: 2rem;
     height: 2rem;
-    background-color: #f7f7f7;
+    background: var(--svgBackgroundAlt);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s;
+    transition: transform 0.3s;
   }
   #cs-navigation .cs-social-link:hover {
-    background-color: var(--primary);
+    transform: translateY(-0.5rem);
   }
   #cs-navigation .cs-social-icon {
     width: 0.75rem;
     height: auto;
-    opacity: 0.6;
+    opacity: 1;
     display: block;
   }
   #cs-navigation .cs-container {
+    position: relative;
     width: 100%;
     max-width: 107.5rem;
     margin: auto;
@@ -894,21 +909,16 @@ html {
     justify-content: flex-end;
     align-items: center;
     gap: 1.5rem;
-    position: relative;
   }
   #cs-navigation .cs-toggle {
     display: none;
   }
   #cs-navigation .cs-logo {
-    width: 18.4%;
     max-width: 12.3125rem;
-    height: 3.75rem;
+    height: 5rem;
     /* margin-right auto pushes everything away from it to the right */
     margin: 0 auto 0 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 100;
   }
   #cs-navigation .cs-logo img {
@@ -1000,10 +1010,6 @@ html {
 }
 /* Larger Desktop - 1600px */
 @media only screen and (min-width: 100rem) {
-  #cs-navigation .cs-donate {
-    display: flex;
-    margin-left: auto;
-  }
   #cs-navigation .cs-nav-button {
     margin: 0;
   }
@@ -1101,6 +1107,25 @@ html {
     padding: var(--sectionPadding);
     position: relative;
   }
+  #cta-52 .cs-button-solid {
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    background-color: #574419;
+    color: white;
+    width: auto;
+    padding: 0 1.875rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 3.125em;
+    font-weight: bold;
+    transition: background-color, color;
+    text-align: center;
+  }
+  #cta-52 .cs-button-solid:hover {
+    background-color: #69531f;
+  }
   #cta-52 .cs-container {
     width: 100%;
     max-width: 80rem;
@@ -1149,8 +1174,8 @@ html {
     display: block;
     height: 100%;
     width: 100%;
-    background: #000;
-    opacity: 0.8;
+    background: #020209;
+    opacity: 0.6;
     top: 0;
     left: 0;
     z-index: 1;
