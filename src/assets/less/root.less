@@ -8,9 +8,9 @@
 @media only screen and (min-width: 0rem) {
     // Website colors
     :root {
-        --primary: #0a5c0a;
+        --primary: #078109;
         --primaryLight: #f6f6ea;
-        --secondary: #105c10;
+        --secondary: #0a5c0a;
         --secondaryLight: #CBEAED;
         --headerColor: #1a1a1a;
         --bodyTextColor: #242424;
@@ -67,6 +67,7 @@
         position: relative;
         display: inline-block;
         background-color: var(--primary);
+        border-radius: (6/16rem);
         color: white;
         width: auto;
         padding: 0 (30/16rem);
@@ -1335,30 +1336,6 @@ html {
         padding: var(--sectionPadding);
         position: relative;
 
-        .cs-button-solid {
-            z-index: 1;
-            position: relative;
-            display: inline-block;
-            background-color: #574419;
-            color: white;
-            width: auto;
-            padding: 0 (30/16rem);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: (16/16rem);
-            line-height: (50/16em);
-            font-weight: bold;
-    
-            // Transition Properties
-            transition: background-color, color;
-            // transition-delay: 0.1s;
-            text-align: center;
-    
-            &:hover {
-                background-color: #69531f;
-            }
-        }
-
         .cs-container {
             width: 100%;
             max-width: (1280/16rem);
@@ -1372,6 +1349,7 @@ html {
             /* 48px - 64px */
             gap: clamp(3rem, 6vw, 4rem);
             position: relative;
+            
         }
 
         .cs-content {
@@ -1403,6 +1381,7 @@ html {
             top: 0;
             left: 0;
             z-index: -1;
+            
 
             &:before {
                 /* black color overlay */
@@ -1416,6 +1395,7 @@ html {
                 top: 0;
                 left: 0;
                 z-index: 1;
+                border-radius: (12/16rem);
             }
 
             img {
@@ -1425,6 +1405,7 @@ html {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
+                border-radius: (12/16rem);
             }
         }
     }

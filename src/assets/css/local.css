@@ -61,6 +61,7 @@
     height: 0.5rem;
     margin-top: 0.5rem;
     background: var(--secondary);
+    border-radius: 0.125rem;
     display: block;
     /* prevents flexbox from squishing it */
     flex: none;
@@ -84,6 +85,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    border-radius: 0.875rem;
   }
   #sbs-1161 .cs-picture1 {
     width: 39.375em;
@@ -120,7 +122,8 @@
     padding: 0.5rem;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    background-color: #574419;
+    background-color: var(--secondary);
+    border-radius: 0.625rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -214,6 +217,7 @@
     aspect-ratio: 328/220;
     position: relative;
     display: block;
+    border-radius: 1rem;
     /* Keeps image from bleeding outside the picture element */
     overflow: hidden;
   }
@@ -251,6 +255,7 @@
     padding-top: clamp(1.5rem, 2.4vw, 1.75rem);
     padding-bottom: clamp(1.5rem, 2.4vw, 1.75rem);
     background: #fff;
+    border-radius: 0.625rem;
     box-shadow: 2px 2px 10px #00000024;
     position: relative;
     z-index: 10;
@@ -416,7 +421,7 @@
     padding: 0.5rem;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    background-color: #574419;
+    background-color: var(--secondary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -504,6 +509,7 @@
     width: 100%;
     /* makes image act like a background image */
     object-fit: cover;
+    border-radius: 0.75rem;
   }
   #sbs-r .cs-picture1 {
     top: 0;
@@ -517,6 +523,7 @@
     /* 6px - 12px */
     border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
     background-color: #fff;
+    border-radius: 1rem;
     height: 25em;
     width: 25.875em;
     box-shadow: 2px 2px 10px #00000024;
@@ -607,25 +614,6 @@
     background-color: var(--primary);
     position: relative;
     z-index: 1;
-  }
-  #cta-1071 .cs-button-solid {
-    z-index: 1;
-    position: relative;
-    display: inline-block;
-    background-color: #574419;
-    color: white;
-    width: auto;
-    padding: 0 1.875rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1rem;
-    line-height: 3.125em;
-    font-weight: bold;
-    transition: background-color, color;
-    text-align: center;
-  }
-  #cta-1071 .cs-button-solid:hover {
-    background-color: #69531f;
   }
   #cta-1071 .cs-container {
     width: 100%;
@@ -807,6 +795,7 @@
     /* Makes image behave like a background image */
     object-fit: cover;
     transition: transform 0.7s;
+    border-radius: 0.375rem;
   }
   #meet-team-220 .cs-card-group {
     padding: 0;
@@ -832,6 +821,10 @@
     flex-direction: column;
     /* prevents padding from adding to height and width */
     box-sizing: border-box;
+    border-radius: 0.75rem;
+  }
+  #meet-team-220 .cs-item:hover .cs-picture img {
+    transform: scale(1.1);
   }
   #meet-team-220 .cs-name {
     font-size: 1.25rem;
@@ -947,6 +940,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    border-radius: 0.75rem;
   }
   #gallery-1086 .cs-picture1 {
     grid-column: 1 / span 6;
@@ -1092,6 +1086,7 @@
     background-color: #fff;
     /* prevents padding from adding to height and width */
     box-sizing: border-box;
+    border-radius: 0.625rem;
     box-shadow: 2px 2px 10px #00000024;
     display: flex;
     justify-content: center;
@@ -1220,7 +1215,7 @@
 @media only screen and (min-width: 0rem) {
   #faq-326 {
     padding: var(--sectionPadding);
-    background-color: var(--backgroundOffset);
+    background-color: var(--offSet);
   }
   #faq-326 .cs-container {
     width: 100%;
@@ -1256,22 +1251,25 @@
   #faq-326 .cs-faq-item {
     list-style: none;
     width: 100%;
-    background-color: white;
-    box-shadow: 2px 2px 10px #00000024;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #0000000f;
+    border-radius: 0.5rem;
     /* clips all corners of the button that overlap the rounded border */
     overflow: hidden;
     transition: border-bottom 0.3s;
   }
   #faq-326 .cs-faq-item.active .cs-button {
-    background-color: var(--primary);
-    color: var(--bodyTextColorWhite);
+    background: var(--primary);
+    color: #fff;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
   #faq-326 .cs-faq-item.active .cs-button:before {
-    background-color: var(--bodyTextColorWhite);
+    background-color: #fff;
     transform: rotate(315deg);
   }
   #faq-326 .cs-faq-item.active .cs-button:after {
-    background-color: var(--bodyTextColorWhite);
+    background-color: #fff;
     transform: rotate(-315deg);
   }
   #faq-326 .cs-faq-item.active .cs-item-p {
@@ -1288,8 +1286,9 @@
     font-weight: bold;
     /* 16px - 20px */
     padding: clamp(1rem, 1.3vw, 1.25rem);
-    background-color: white;
+    background-color: #fff;
     border: none;
+    border-radius: 0.5rem;
     color: var(--headerColor);
     display: block;
     width: 100%;
