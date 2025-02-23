@@ -395,6 +395,7 @@
     /* centers the button */
     text-align: center;
     padding: var(--sectionPadding);
+    background-color: #f7f7f7;
   }
   #meet-team-220 .cs-container {
     width: 100%;
@@ -534,7 +535,6 @@
     padding: var(--sectionPadding);
     position: relative;
     z-index: 1;
-    background-color: #f7f7f7;
   }
   #reviews-864:before {
     content: "";
@@ -720,7 +720,7 @@
 @media only screen and (min-width: 0rem) {
   #faq-326 {
     padding: var(--sectionPadding);
-    background-color: var(--offSet);
+    background-color: #f7f7f7;
   }
   #faq-326 .cs-container {
     width: 100%;
