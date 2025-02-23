@@ -7,12 +7,13 @@
   :root {
     --primary: #078109;
     --primaryLight: #f6f6ea;
-    --secondary: #0a5c0a;
+    --secondary: #084708;
     --secondaryLight: #CBEAED;
     --headerColor: #1a1a1a;
     --bodyTextColor: #242424;
     --bodyTextColorWhite: #fafbfc;
     --backgroundOffset: #f7f7f7;
+    --buttonHover: #0c970f;
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
@@ -69,7 +70,7 @@
     text-align: center;
   }
   .cs-button-solid:hover {
-    background-color: #967735;
+    background-color: var(--buttonHover);
   }
   .cs-hide-on-mobile {
     display: none;
@@ -1182,6 +1183,7 @@ html {
     background: var(--backgroundOffset);
     padding: 5.25rem 0 calc(20 / 16 * 1rem);
     font-size: min(4vw, 1.2em);
+    position: relative;
   }
   #footer .left-section {
     margin: auto;
@@ -1192,7 +1194,7 @@ html {
     display: inline-block;
     margin: auto;
     margin-bottom: 1.875em;
-    height: 4rem;
+    height: 8rem;
     width: auto;
     text-align: center;
   }
@@ -1330,7 +1332,7 @@ html {
   }
   #footer .left-section .logo {
     margin-left: 0;
-    height: 4rem;
+    height: 8rem;
     text-align: left;
   }
   #footer .left-section p {

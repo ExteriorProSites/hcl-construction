@@ -4,36 +4,16 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #hero-1427 {
-    /* Centers button */
+  #hero-446 {
+    /* Centers tag */
     text-align: center;
-    /* 200px - 300px - leaving extra space for the navigation */
-    padding: clamp(12.5rem, 25.95vw, 18.75em) 1rem;
-    /* prevents the topper line from causing an overflow */
-    overflow: hidden;
+    /* 144px - 300px - leaving extra space for the navigation */
+    padding: clamp(9rem, 25.95vw, 19.75rem) 1rem 0;
+    padding-bottom: 0;
     position: relative;
     z-index: 1;
   }
-  #hero-1427 .cs-button-solid {
-    z-index: 1;
-    position: relative;
-    display: inline-block;
-    background-color: #078109;
-    color: white;
-    width: auto;
-    padding: 0 1.875rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1rem;
-    line-height: 3.125em;
-    font-weight: bold;
-    transition: background-color, color;
-    text-align: center;
-  }
-  #hero-1427 .cs-button-solid:hover {
-    background-color: #69531f;
-  }
-  #hero-1427 .cs-background {
+  #hero-446 .cs-background {
     width: 100%;
     height: 100%;
     display: block;
@@ -42,13 +22,14 @@
     left: 0;
     z-index: -2;
   }
-  #hero-1427 .cs-background:before {
+  #hero-446 .cs-background:before {
     /* Overlay */
     content: "";
     width: 100%;
     height: 100%;
-    background: #020209;
-    opacity: 0.43;
+    background: #1a1a1a;
+    mix-blend-mode: multiply;
+    opacity: 0.4;
     position: absolute;
     display: block;
     top: 0;
@@ -57,7 +38,7 @@
     /* prevents the cursor from interacting with it */
     pointer-events: none;
   }
-  #hero-1427 .cs-background img {
+  #hero-446 .cs-background img {
     position: absolute;
     top: 0;
     left: 0;
@@ -65,65 +46,139 @@
     width: 100%;
     object-fit: cover;
   }
-  #hero-1427 .cs-container {
+  #hero-446 .cs-container {
     width: 100%;
     max-width: 80rem;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 3rem;
+    /* 80px - 120px */
+    gap: clamp(5rem, 10vw, 7.5rem);
   }
-  #hero-1427 .cs-content {
-    text-align: center;
-    width: 100%;
-    max-width: 39.375rem;
+  #hero-446 .cs-content {
+    margin: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 6rem;
   }
-  #hero-1427 .cs-topper {
-    /* 13px - 16px */
-    font-size: clamp(0.8125rem, 1.5vw, 1rem);
-    line-height: 1.2em;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-align: inherit;
+  #hero-446 .cs-tag {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    /* 30px - 44px */
+    line-height: clamp(1.875rem, 4vw, 2.75rem);
+    text-align: center;
     text-transform: uppercase;
-    margin-bottom: 1rem;
-    color: var(--secondary);
+    /* 12px - 20px */
+    padding: 0 clamp(0.75rem, 1.6vw, 1.25rem);
+    /* 12px - 20px */
+    margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
+    color: var(--bodyTextColorWhite);
+    border: 1px solid var(--bodyTextColorWhite);
+    background: rgba(250, 251, 252, 0.2);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-radius: 1.875rem;
+    /* prevents border from affecting height and width */
+    box-sizing: border-box;
     display: inline-block;
-    position: relative;
   }
-  #hero-1427 .cs-title {
-    /* 39px - 61px */
-    font-size: clamp(3.0625rem, 6vw, 4rem);
-    font-weight: 900;
+  #hero-446 .cs-title {
+    /* 31px - 61px */
+    font-size: clamp(1.9375rem, 6.4vw, 3.8125rem);
+    font-weight: 700;
     line-height: 1.2em;
-    text-align: inherit;
+    text-align: center;
     max-width: 51.8125rem;
-    color: #fff;
+    /* 16px - 24px */
+    margin: 0 auto clamp(1rem, 4vw, 1.5rem) 0;
+    color: var(--bodyTextColorWhite);
     position: relative;
   }
-  #hero-1427 .cs-text {
+  #hero-446 .cs-text {
     /* 16px - 20px */
     font-size: clamp(1rem, 1.95vw, 1.25rem);
     line-height: 1.5em;
-    text-align: inherit;
+    text-align: center;
     width: 100%;
     /* 464px - 622px */
     max-width: clamp(29rem, 60vw, 38.785rem);
     margin: 0;
-    margin-bottom: 2rem;
-    color: #fff;
+    color: var(--bodyTextColorWhite);
   }
-  #hero-1427 .cs-button-group {
+  #hero-446 .cs-card-group {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    filter: drop-shadow(0px 24px 54px rgba(87, 107, 147, 0.12));
+    /* 12px - 24px */
+    border-radius: clamp(0.75rem, 2vw, 1.5rem) clamp(0.75rem, 2vw, 1.5rem) 0 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    gap: 0.5rem;
+  }
+  #hero-446 .cs-item {
+    list-style: none;
+    width: 50%;
+    margin: 0;
+    /* 16px - 48px top and bottom */
+    /* 12px - 110px top and bottom */
+    padding: clamp(1rem, 3.7vw, 3rem) clamp(0.75rem, 3vw, 6.875rem);
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    border-right: 1px solid #dcdcdd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  #hero-446 .cs-item:nth-of-type(2) {
+    border: none;
+  }
+  #hero-446 .cs-item:last-of-type {
+    width: 100%;
+    border-top: 1px solid #dcdcdd;
+    border-right: none;
+  }
+  #hero-446 .cs-number {
+    /* 31px - 61px */
+    font-size: clamp(1.9375rem, 4vw, 3.8125rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary);
+    margin: 0 0 0.25rem 0;
+    display: block;
+  }
+  #hero-446 .cs-desc {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 400;
+    text-align: center;
+    max-width: 12.5rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+    display: block;
+  }
+}
+/* In-Between - 650px */
+@media only screen and (min-width: 40.625rem) {
+  #hero-446 .cs-card-group {
+    flex-wrap: nowrap;
+  }
+  #hero-446 .cs-item {
+    width: 33.33%;
+  }
+  #hero-446 .cs-item:nth-of-type(2) {
+    border-right: 1px solid #dcdcdd;
+  }
+  #hero-446 .cs-item:last-of-type {
+    width: 33.33%;
+    border: none;
   }
 }

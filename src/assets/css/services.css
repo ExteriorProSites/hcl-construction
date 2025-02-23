@@ -372,8 +372,8 @@
     left: 0;
     height: 100%;
     width: 100%;
-    opacity: 0.16;
     object-fit: cover;
+    opacity: 0.2;
   }
   #stats-340-1112 .cs-card-group {
     width: 100%;
@@ -401,7 +401,8 @@
     width: clamp(3.75rem, 7.9vw, 5rem);
     height: clamp(3.75rem, 7.9vw, 5rem);
     margin-right: 1rem;
-    border: 1px solid #bababa;
+    border: 3px solid #fff;
+    border-radius: 0.625rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -412,9 +413,8 @@
   }
   #stats-340-1112 .cs-icon {
     /* 28px - 40px */
-    width: clamp(1.75rem, 3.9vw, 2.5rem);
+    width: clamp(2rem, 3.9vw, 3rem);
     height: auto;
-    filter: brightness(0%) saturate(100%) invert(86%) sepia(1%) saturate(14%) hue-rotate(314deg) brightness(85%) contrast(97%);
   }
   #stats-340-1112 .cs-flex-group {
     display: flex;

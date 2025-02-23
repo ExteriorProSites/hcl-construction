@@ -23,9 +23,9 @@ eleventyNavigation:
 <section id="int-hero">
     <h1 id="home-h">About Us</h1>
     <picture>
-        <source media="(max-width: 600px)" srcset="../assets/images/grass-2-m.jpg">
-        <source media="(min-width: 601px)" srcset="../assets/images/grass-2-l.jpg">
-        <img aria-hidden="true" decoding="async" src="../assets/images/grass-2-l.jpg" alt="grass" loading="eager" width="2500" height="1667">
+        <source media="(max-width: 600px)" srcset="/assets/images/new-hero.jpg">
+        <source media="(min-width: 601px)" srcset="/assets/images/new-hero.jpg">
+        <img aria-hidden="true" decoding="async" src="/assets/images/new-hero.jpg" alt="grass" loading="eager" width="2500" height="1667">
     </picture>
 </section>
 
@@ -54,55 +54,43 @@ eleventyNavigation:
             <p class="cs-text">
                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta consequuntur officiis doloremque maxime commodi reprehenderit iusto. Mollitia neque possimus accusamus voluptate facere. Laborum repudiandae, sit exercitationem eum error quia voluptas?
             </p>
-            <ul class="cs-ul">
-                <li class="cs-li">
-                    <h3 class="cs-h3">Mission Statement</h3>
-                    <p class="cs-li-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae distinctio facere aliquid. Quo, similique, harum ipsa distinctio suscipit.
-                    </p>
-                </li>
-                <li class="cs-li">
-                    <h3 class="cs-h3">Our Values</h3>
-                    <p class="cs-li-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis obcaecati consectetur illo dolor qui dignissimos non, molestias saepe accusamus ipsa distinctio suscipit soluta mollitia.
-                    </p>
-                </li>
-            </ul>
+            <div class="cs-text-content">
+                <h3 class="cs-h3">Mission Statement</h3>
+                <p class="cs-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae distinctio facere aliquid. Quo, similique, harum ipsa distinctio suscipit.
+                </p>
+                <h3 class="cs-h3">Our Values</h3>
+                <p class="cs-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis obcaecati consectetur illo dolor qui dignissimos non, molestias saepe accusamus ipsa distinctio suscipit soluta mollitia.
+                </p>
+            </div>
     </div>
 </section>
 
 <!-- ============================================ -->
-<!--                Side By Side                  -->
+<!--                 Side By Side                 -->
 <!-- ============================================ -->
 
-<section id="sbs-1161">
+<section id="sbs-311">
     <div class="cs-container">
+        <!-- Left Image Section -->
         <div class="cs-image-group">
-            <!--Top left image-->
             <picture class="cs-picture cs-picture1">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="../assets/images/retainer-wall-6.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="../assets/images/retainer-wall-6.jpg">
-                <img loading="lazy" decoding="async" src="../assets/images/retainer-wall-6.jpg" alt="retainer wall" width="630" height="390">
+                <source media="(max-width: 600px)" srcset="/assets/images/planting-5.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/planting-5.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/planting-5.jpg" alt="lawyers" width="522" height="581" aria-hidden="true">
             </picture>
-            <!--Bottom right image-->
             <picture class="cs-picture cs-picture2">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="../assets/images/crew-1.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="../assets/images/crew-1.jpg">
-                <img loading="lazy" decoding="async" src="../assets/images/crew-1.jpg" alt="crew" width="461" height="300">
+                <source media="(max-width: 600px)" srcset="/assets/images/crew-1.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/crew-1.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/crew-1.jpg" alt="gavel" width="414" height="400" aria-hidden="true">
             </picture>
-            <div class="cs-box">
-                <span class="cs-number">A+</span>
-                <span class="cs-desc">BBB Rating</span>
-            </div>
         </div>
+        <!-- Right Content Section-->
         <div class="cs-content">
             <h2 class="cs-title">We'll Take Care of Everything So You Can Relax and Enjoy</h2>
             <p class="cs-text">
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum deleniti eaque sunt, amet cupiditate, repudiandae assumenda possimus quaerat quos ipsum architecto excepturi quae et, sapiente nobis qui minus libero natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta consequuntur officiis doloremque maxime commodi reprehenderit iusto. Mollitia neque possimus accusamus voluptate facere. Laborum repudiandae, sit exercitationem eum error quia voluptas?
             </p>
             <ul class="cs-ul">
                 <li class="cs-li"> Lorem, ipsum sit amet consectetur</li>
@@ -111,10 +99,11 @@ eleventyNavigation:
                 <li class="cs-li"> Lorem, dolo sit consectetur</li>
                 <li class="cs-li"> Lorem amit Lorem, ipsum sit</li>
             </ul>
-            <a href="/services" class="cs-button-solid">View Services</a>
+            <a href="" class="cs-button-solid">About Us</a>
         </div>
     </div>
 </section>
+                                
 
 <!-- ============================================ -->
 <!--                   Stats                      -->
@@ -125,7 +114,7 @@ eleventyNavigation:
     <ul class="cs-card-group">
         <li class="cs-item">
             <picture class="cs-picture">
-                <img class="cs-icon" src="https://csimg.nyc3.digitaloceanspaces.com/Stats/person2-gold.svg" alt="icon" width="35" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                <img class="cs-icon" src="/assets/svgs/expert.svg" alt="icon" width="35" height="40" loading="lazy" decoding="async" aria-hidden="true">
             </picture>
             <div class="cs-flex-group">
                 <span class="cs-number">3</span>
@@ -134,7 +123,7 @@ eleventyNavigation:
         </li>
         <li class="cs-item">
             <picture class="cs-picture">
-                <img class="cs-icon" src="https://csimg.nyc3.digitaloceanspaces.com/Stats/mop-gold.svg" alt="icon" width="40" height="35" loading="lazy" decoding="async" aria-hidden="true">
+                <img class="cs-icon" src="/assets/svgs/projects-3.svg" alt="icon" width="40" height="35" loading="lazy" decoding="async" aria-hidden="true">
             </picture>
             <div class="cs-flex-group">
                 <span class="cs-number">300+</span>
@@ -143,7 +132,7 @@ eleventyNavigation:
         </li>
         <li class="cs-item">
             <picture class="cs-picture">
-                <img class="cs-icon" src="https://csimg.nyc3.digitaloceanspaces.com/Stats/thumbs-gold.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                <img class="cs-icon" src="/assets/svgs/reviews-2.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
             </picture>
             <div class="cs-flex-group">
                 <span class="cs-number">150+</span>
@@ -152,7 +141,7 @@ eleventyNavigation:
         </li>
         <li class="cs-item">
             <picture class="cs-picture">
-                <img class="cs-icon" src="https://csimg.nyc3.digitaloceanspaces.com/Stats/award2-gold.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                <img class="cs-icon" src="/assets/svgs/rating-2.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
             </picture>
             <div class="cs-flex-group">
                 <span class="cs-number">A+</span>
@@ -162,9 +151,9 @@ eleventyNavigation:
     </ul>
     <!--Background Image-->
     <picture class="cs-background">
-        <source media="(max-width: 600px)" srcset="../../assets/images/landing-m.jpg">
-        <source media="(min-width: 601px)" srcset="../../assets/images/landing-l.jpg">
-        <img aria-hidden="true" loading="lazy" decoding="async" src="../../assets/images/landing-l.jpg" alt="lawn" width="1920" height="283">
+        <source media="(max-width: 600px)" srcset="/assets/images/landing-m.jpg">
+        <source media="(min-width: 601px)" srcset="/assets/images/landing-l.jpg">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/landing-l.jpg" alt="lawn" width="1920" height="283">
     </picture>
 </div>
 
@@ -299,10 +288,6 @@ eleventyNavigation:
             </li>
         </ul>
     </div>
-    <!--Top Left Quote-->
-    <img class="cs-quote1" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2FQuote.svg" decoding="async" alt="quote icon" width="194" height="160">
-    <!--Top Right Quote-->
-    <img class="cs-quote2" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2FQuote.svg" decoding="async" alt="quote icon" width="194" height="160">
 </section>
 
 <!-- ============================================ -->

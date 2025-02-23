@@ -51,6 +51,11 @@
             right: 0;
             height: (581/16em);
             width: (522/16em);
+            border-radius: (12/16rem);
+            
+            img {
+                border-radius: (12/16rem);
+            }
         }
 
         .cs-picture2 {
@@ -62,50 +67,78 @@
             height: (400/16em);
             width: (414/16em);
             box-shadow: 2px 2px 10px #00000024;
+            border-radius: (16/16rem);
+
+            img {
+                border-radius: (9/16rem);
+            }
         }
 
         .cs-right {
             margin: auto;
             max-width: (542/16rem);
         }
+
+        .cs-topper {
+            margin-bottom: (4/16rem);
+            text-align: left;
+        }
+
+        .cs-title {
+            max-width: (800/16rem);
+            text-align: left;
+        }
+
         .cs-text {
             margin-bottom: (16/16rem);
+            max-width: (750/16rem);
+            text-align: left;
             &:last-of-type {
                 margin-bottom: (32/16rem);
             }
         }
 
-        .cs-ul {
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: (24/16rem);
+        .cs-flex-group {
+            position: relative;
+            border-radius: (16/16rem);
+            background-color: #f7f7f7;
+            /* 16px - 32px */
+            padding: clamp(1rem, 3vw, 2rem);
         }
 
-        .cs-li {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .cs-h3 {
-            /* 20px - 25px */
-            font-size: 1.25rem, 3vw, 1.5625rem;
-            line-height: 1.2em;
-            font-weight: 700;
-            margin: 0 0 (12/16rem);
-        }
-
-        .cs-li-text {
-            font-size: var(--bodyFontSize);
+        .cs-flex-p {
+            margin: 0 0 (16/16rem);
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
             line-height: 1.5em;
-            text-align: inherit;
-            width: 100%;
-            max-width: (630/16rem);
-            margin: 0;
-            color: var(--bodyTextColor);
+            color: #353535;
+        }
+
+        .cs-name {
+            display: block;
+            margin: 0 0 (4/16rem);
+            text-transform: uppercase;
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            font-weight: bold;
+            color: var(--headerColor);
+        }
+
+        .cs-job {
+            display: block;
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            color: #353535;
+        }
+
+        .cs-quote-icon {
+            position: absolute;
+            bottom: (0/16rem);
+            /* 16px - 32px */
+            right: clamp(1rem, 4vw, 2rem);
+            height: auto;
+            /* 60px - 136px */
+            width: clamp(3.75rem, 10vw, 8.5rem);
         }
     }
 }
@@ -129,6 +162,20 @@
         .cs-right {
             margin: 0;
         }
+
+        .cs-picture1 {
+            img {
+                border-radius: (16/16rem);
+            }
+    }
+
+        .cs-picture2 {
+                border-radius: (28/16rem);
+
+                img {
+                    border-radius: (10/16rem);
+                }
+        }
     }
 }
 
@@ -138,16 +185,13 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #sbs-1161 {
+    #sbs-311 {
         padding: var(--sectionPadding);
-        /* clips grpahics from causing overflow issues */
-        overflow: hidden;
         background-color: #f7f7f7;
 
         .cs-container {
             width: 100%;
-            /* changes to 1280px at desktop */
-            max-width: (550/16rem);
+            max-width: (1280/16rem);
             margin: auto;
             display: flex;
             flex-direction: column;
@@ -199,6 +243,7 @@
                 height: (8/16rem);
                 margin-top: (8/16rem);
                 background: var(--secondary);
+                border-radius: (2/16rem);
                 display: block;
                 /* prevents flexbox from squishing it */
                 flex: none;
@@ -206,123 +251,82 @@
         }
 
         .cs-image-group {
-            /* scales the whole group based on the view width size and stop when that vales equals .8em, resets at desktop */
-            font-size: ~"min(2.15vw, .8em)";
-            width: (678/16em);
-            height: (588/16em);
-            display: block;
+            /* scaling the font size with the view width */
+            font-size: ~"min(2.31vw, .7em)";
+            /* using ems so we can use font size to scale the whole section */
+            width: (631/16em);
+            height: (636/16em);
             position: relative;
-            z-index: 1;
         }
 
         .cs-picture {
+            border-radius: (24/16em);
+            /* clips img tag corners */
+            overflow: hidden;
             position: absolute;
+            display: block;
 
             img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
                 position: absolute;
                 top: 0;
                 left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes image act like a background image */
+                object-fit: cover;
             }
         }
 
         .cs-picture1 {
-            width: (630/16em);
-            height: (390/16em);
             top: 0;
-            left: 0;
-            z-index: 10;
+            right: 0;
+            height: (581/16em);
+            width: (522/16em);
+            border-radius: (12/16rem);
+            
+            img {
+                border-radius: (12/16rem);
+            }
         }
 
         .cs-picture2 {
-            width: (461/16em);
-            height: (300/16em);
             bottom: 0;
-            right: 0;
-            z-index: 10;
-        }
-
-        .cs-graphic {
-            height: auto;
-            position: absolute;
-        }
-
-        .cs-graphic1 {
-            width: (1154/16em);
-            top: (20/16em);
-            right: (-60/16em);
-            transform: rotate(-15deg);
-        }
-
-        .cs-graphic2 {
-            width: (1085/16em);
-            top: (185/16em);
-            right: (-25/16em);
-        }
-
-        .cs-box {
-            width: (197/16em);
-            height: (178/16em);
-            padding: (8/16rem);
-            /* prevents padding and border from affecting height and width */
-            box-sizing: border-box;
-            background-color: #574419;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            position: absolute;
-            z-index: 20;
             left: 0;
-            bottom: 0;
-        }
+            /* 6px - 12px */
+            border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
+            background-color: #fff;
+            height: (400/16em);
+            width: (414/16em);
+            box-shadow: 2px 2px 10px #00000024;
+            border-radius: (16/16rem);
 
-        .cs-number {
-            /* 20px - 39px */
-            font-size: clamp(1.25rem, 4vw, 2.4375rem);
-            text-align: center;
-            line-height: 1.2em;
-            font-weight: 700;
-            width: 100%;
-            /* 4px - 8px */
-            margin: 0 0 clamp(0.25rem, 1vw, 0.5rem);
-            color: var(--bodyTextColorWhite);
-            display: block;
-        }
-
-        .cs-desc {
-            /* 12px - 16px */
-            font-size: clamp(0.75rem, 1.9vw, 1rem);
-            text-align: center;
-            line-height: 1.2em;
-            font-weight: 700;
-            width: 100%;
-            max-width: 12ch;
-            margin: 0;
-            color: var(--bodyTextColorWhite);
-            display: block;
+            img {
+                border-radius: (9/16rem);
+            }
         }
     }
 }
 
-/* Small Desktop - 1024px */
+/* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #sbs-1161 {
+    #sbs-311 {
         .cs-container {
-            max-width: (1280/16rem);
-            flex-direction: row;
+            flex-flow: row;
             justify-content: space-between;
-            align-items: center;
+            gap: (52/16rem);
         }
 
         .cs-image-group {
             font-size: ~"min(1.2vw, 1em)";
             flex: none;
         }
+
+        .cs-content {
+            margin: 0;
+        }
     }
 }
+
 
 /*-- -------------------------- -->
 <---           Stats            -->
@@ -351,8 +355,8 @@
                 left: 0;
                 height: 100%;
                 width: 100%;
-                opacity: 0.16;
                 object-fit: cover;
+                opacity: .2;
             }
         }
 
@@ -384,7 +388,8 @@
             width: clamp(3.75rem, 7.9vw, 5rem);
             height: clamp(3.75rem, 7.9vw, 5rem);
             margin-right: (16/16rem);
-            border: 1px solid #bababa;
+            border: 3px solid #fff;
+            border-radius: (10/16rem);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -396,9 +401,8 @@
 
         .cs-icon {
             /* 28px - 40px */
-            width: clamp(1.75rem, 3.9vw, 2.5rem);
+            width: clamp(2rem, 3.9vw, 3rem);
             height: auto;
-            filter: brightness(0%) saturate(100%) invert(86%) sepia(1%) saturate(14%) hue-rotate(314deg) brightness(85%) contrast(97%);
         }
 
         .cs-flex-group {
@@ -460,7 +464,6 @@
         /* centers the button */
         text-align: center;
         padding: var(--sectionPadding);
-        background-color: #f7f7f7;
 
         .cs-container {
             width: 100%;
@@ -487,12 +490,12 @@
         .cs-picture {
             width: 100%;
             margin-bottom: (16/16rem);
-
             display: block;
             position: relative;
             aspect-ratio: 296/320;
             /* clips the corners off the image tag */
             overflow: hidden;
+            border-radius: (6/16rem);
 
             img {
                 position: absolute;
@@ -503,6 +506,7 @@
                 /* Makes image behave like a background image */
                 object-fit: cover;
                 transition: transform 0.7s;
+               
             }
         }
 
@@ -531,11 +535,12 @@
             flex-direction: column;
             /* prevents padding from adding to height and width */
             box-sizing: border-box;
+            border-radius: (10/16rem);
 
             &:hover {
                 .cs-picture {
                     img {
-                        // transform: scale(1.1);
+                        transform: scale(1.1);
                     }
                 }
             }
@@ -619,13 +624,13 @@
 /*-- -------------------------- -->
 <---          Reviews           -->
 <--- -------------------------- -*/
-
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     #reviews-864 {
         padding: var(--sectionPadding);
         position: relative;
         z-index: 1;
+        background-color: #f7f7f7;
 
         &:before {
             content: "";
@@ -689,6 +694,7 @@
             background-color: #fff;
             /* prevents padding from adding to height and width */
             box-sizing: border-box;
+            border-radius: (12/16rem);
             box-shadow: 2px 2px 10px #00000024;
             // box-shadow: 6px 6px 10px #3535351a;
             // border: 1px solid var(--secondary);
@@ -844,7 +850,7 @@
 @media only screen and (min-width: 0rem) {
     #faq-326 {
         padding: var(--sectionPadding);
-        background-color: var(--backgroundOffset);
+        background-color: var(--offSet);
 
         .cs-container {
             width: 100%;
@@ -884,8 +890,9 @@
         .cs-faq-item {
             list-style: none;
             width: 100%;
-            background-color: white;
-            box-shadow: 2px 2px 10px #00000024;
+            background-color: #fff;
+            box-shadow: 2px 2px 10px #0000000f;
+            border-radius: (8/16rem);
 
             /* clips all corners of the button that overlap the rounded border */
             overflow: hidden;
@@ -894,14 +901,16 @@
 
             &.active {
                 .cs-button {
-                    background-color: var(--primary);
-                    color: var(--bodyTextColorWhite);
+                    background: var(--primary);
+                    color: #fff;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
                     &:before {
-                        background-color: var(--bodyTextColorWhite);
+                        background-color: #fff;
                         transform: rotate(315deg);
                     }
                     &:after {
-                        background-color: var(--bodyTextColorWhite);
+                        background-color: #fff;
                         transform: rotate(-315deg);
                     }
                 }
@@ -923,8 +932,9 @@
             font-weight: bold;
             /* 16px - 20px */
             padding: clamp(1rem, 1.3vw, 1.25rem);
-            background-color: white;
+            background-color: #fff;
             border: none;
+            border-radius: (8/16rem);
             color: var(--headerColor);
             display: block;
             width: 100%;

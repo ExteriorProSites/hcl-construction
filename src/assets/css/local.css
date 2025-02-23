@@ -4,6 +4,156 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+  #sbs-r {
+    padding: var(--sectionPadding);
+  }
+  #sbs-r .cs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    max-width: 80rem;
+    width: 100%;
+    row-gap: 2.5rem;
+  }
+  #sbs-r .cs-left {
+    position: relative;
+    height: 39.75em;
+    /* using ems so we can use font size to scale the whole section */
+    width: 39.4375em;
+    /* scaling the font size with the view width */
+    font-size: min(2.31vw, 0.7em);
+  }
+  #sbs-r .cs-picture {
+    position: absolute;
+    display: block;
+    /* clips img tag corners */
+    overflow: hidden;
+  }
+  #sbs-r .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes image act like a background image */
+    object-fit: cover;
+  }
+  #sbs-r .cs-picture1 {
+    top: 0;
+    right: 0;
+    height: 36.3125em;
+    width: 32.625em;
+    border-radius: 0.75rem;
+  }
+  #sbs-r .cs-picture1 img {
+    border-radius: 0.75rem;
+  }
+  #sbs-r .cs-picture2 {
+    bottom: 0;
+    left: 0;
+    /* 6px - 12px */
+    border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
+    background-color: #fff;
+    height: 25em;
+    width: 25.875em;
+    box-shadow: 2px 2px 10px #00000024;
+    border-radius: 1rem;
+  }
+  #sbs-r .cs-picture2 img {
+    border-radius: 0.5625rem;
+  }
+  #sbs-r .cs-right {
+    margin: auto;
+    max-width: 33.875rem;
+  }
+  #sbs-r .cs-topper {
+    margin-bottom: 0.25rem;
+    text-align: left;
+  }
+  #sbs-r .cs-title {
+    max-width: 50rem;
+    text-align: left;
+  }
+  #sbs-r .cs-text {
+    margin-bottom: 1rem;
+    max-width: 46.875rem;
+    text-align: left;
+  }
+  #sbs-r .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #sbs-r .cs-flex-group {
+    position: relative;
+    border-radius: 1rem;
+    background-color: #f7f7f7;
+    /* 16px - 32px */
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+  #sbs-r .cs-flex-p {
+    margin: 0 0 1rem;
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    color: #353535;
+  }
+  #sbs-r .cs-name {
+    display: block;
+    margin: 0 0 0.25rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 1.2em;
+    font-weight: bold;
+    color: var(--headerColor);
+  }
+  #sbs-r .cs-job {
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.5em;
+    color: #353535;
+  }
+  #sbs-r .cs-quote-icon {
+    position: absolute;
+    bottom: 0rem;
+    /* 16px - 32px */
+    right: clamp(1rem, 4vw, 2rem);
+    height: auto;
+    /* 60px - 136px */
+    width: clamp(3.75rem, 10vw, 8.5rem);
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #sbs-r .cs-container {
+    flex-flow: row;
+    justify-content: space-between;
+    gap: 3.25rem;
+  }
+  #sbs-r .cs-left {
+    /* sends it to the right */
+    order: 2;
+    font-size: min(1.2vw, 1em);
+    flex: none;
+  }
+  #sbs-r .cs-right {
+    margin: 0;
+  }
+  #sbs-r .cs-picture1 img {
+    border-radius: 1rem;
+  }
+  #sbs-r .cs-picture2 {
+    border-radius: 1.75rem;
+  }
+  #sbs-r .cs-picture2 img {
+    border-radius: 0.625rem;
+  }
+}
+/*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
   #sbs-1161 {
     padding: var(--sectionPadding);
     /* clips grpahics from causing overflow issues */
@@ -97,9 +247,15 @@
   #sbs-1161 .cs-picture2 {
     width: 28.8125em;
     height: 18.75em;
+    border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
+    box-shadow: 2px 2px 10px #00000024;
+    border-radius: 1rem;
     bottom: 0;
     right: 0;
     z-index: 10;
+  }
+  #sbs-1161 .cs-picture2 img {
+    border-radius: 0.5rem;
   }
   #sbs-1161 .cs-graphic {
     height: auto;
@@ -122,6 +278,7 @@
     padding: 0.5rem;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
+    box-shadow: 2px 2px 10px #00000024;
     background-color: var(--secondary);
     border-radius: 0.625rem;
     display: flex;
@@ -169,439 +326,12 @@
   #sbs-1161 .cs-image-group {
     font-size: min(1.2vw, 1em);
     flex: none;
-  }
-}
-/*-- -------------------------- -->
-<---          Services          -->
-<--- -------------------------- -*/
-/* Mobile - 360px- Contains Hover State */
-@media only screen and (min-width: 0rem) {
-  #services-30 {
-    padding: var(--sectionPadding);
-  }
-  #services-30 .cs-container {
-    width: 100%;
-    /* changes to 1280px at tablet */
-    max-width: 34.375rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #services-30 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-  }
-  #services-30 .cs-card-group {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-  #services-30 .cs-item {
-    list-style: none;
-    margin: 0;
-    width: 100%;
-  }
-  #services-30 .cs-picture {
-    /* height divided by width */
-    aspect-ratio: 328/220;
-    position: relative;
-    display: block;
-    border-radius: 1rem;
-    /* Keeps image from bleeding outside the picture element */
-    overflow: hidden;
-  }
-  #services-30 .cs-picture:before {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 0%;
-    width: 100%;
-    background: var(--primary);
-    opacity: 0.8;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transition: height 0.3s;
-  }
-  #services-30 .cs-picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* Makes img tag act like a background image */
-    object-fit: cover;
-    transition: transform 0.7s;
-  }
-  #services-30 .cs-box {
-    /* Centers the button */
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
-    /* -32px to -48px */
-    margin-top: calc(clamp(2rem, 7vw, 3rem)*-1);
-    /* 24px to 28px */
-    padding-top: clamp(1.5rem, 2.4vw, 1.75rem);
-    padding-bottom: clamp(1.5rem, 2.4vw, 1.75rem);
-    background: #fff;
-    border-radius: 0.625rem;
-    box-shadow: 2px 2px 10px #00000024;
-    position: relative;
-    z-index: 10;
-  }
-  #services-30 .cs-h3 {
-    /* 20px - 25px */
-    font-size: clamp(1.25rem, 2vw, 1.5625rem);
-    text-align: center;
-    line-height: 1.2em;
-    font-weight: bold;
-    color: var(--headerColor);
-    /* 24px to 28px */
-    margin: 0 0 clamp(1.5rem, 2.4vw, 1.75rem);
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #services-30 .cs-container {
-    max-width: 80rem;
-  }
-  #services-30 .cs-card-group {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-  #services-30 .cs-item {
-    width: 47%;
-  }
-  #services-30 .cs-picture {
-    /* Reset aspect ratio, don't need it anymore */
-    aspect-ratio: initial;
-    /* 240px - 420px */
-    height: clamp(15rem, 31.5vw, 26.25rem);
-  }
-}
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #services-30 .cs-card-group {
-    max-width: 100%;
-    flex-wrap: nowrap;
-  }
-  #services-30 .cs-item {
-    width: 24%;
-  }
-}
-/*-- -------------------------- -->
-<---       Side By Side         -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #sbs-1161 {
-    padding: var(--sectionPadding);
-    /* clips grpahics from causing overflow issues */
-    overflow: hidden;
-    background-color: #f7f7f7;
-  }
-  #sbs-1161 .cs-container {
-    width: 100%;
-    /* changes to 1280px at desktop */
-    max-width: 34.375rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #sbs-1161 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: left;
-    width: 100%;
-    max-width: 33.875rem;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: flex-start;
-  }
-  #sbs-1161 .cs-text {
-    margin-bottom: 1rem;
-  }
-  #sbs-1161 .cs-text:last-of-type {
-    margin-bottom: 2rem;
-  }
-  #sbs-1161 .cs-ul {
-    max-width: 39.375rem;
-    margin: 0 0 2rem 0;
-    padding: 0;
-    /* clips the bullets to create the half circle */
-    overflow: hidden;
-  }
-  #sbs-1161 .cs-li {
-    list-style: none;
-    margin: 0 0 0.5rem 0;
-    color: var(--bodyTextColor);
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 0.75rem;
-    position: relative;
-  }
-  #sbs-1161 .cs-li:before {
-    /* bullet */
-    content: "";
-    width: 0.5rem;
-    height: 0.5rem;
-    margin-top: 0.5rem;
-    background: var(--secondary);
-    display: block;
-    /* prevents flexbox from squishing it */
-    flex: none;
-  }
-  #sbs-1161 .cs-image-group {
-    /* scales the whole group based on the view width size and stop when that vales equals .8em, resets at desktop */
-    font-size: min(2.15vw, .8em);
-    width: 42.375em;
-    height: 36.75em;
-    display: block;
-    position: relative;
-    z-index: 1;
-  }
-  #sbs-1161 .cs-picture {
-    position: absolute;
-  }
-  #sbs-1161 .cs-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  #sbs-1161 .cs-picture1 {
-    width: 39.375em;
-    height: 24.375em;
-    top: 0;
-    left: 0;
-    z-index: 10;
   }
   #sbs-1161 .cs-picture2 {
-    width: 28.8125em;
-    height: 18.75em;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
+    background-color: white;
   }
-  #sbs-1161 .cs-graphic {
-    height: auto;
-    position: absolute;
-  }
-  #sbs-1161 .cs-graphic1 {
-    width: 72.125em;
-    top: 1.25em;
-    right: -3.75em;
-    transform: rotate(-15deg);
-  }
-  #sbs-1161 .cs-graphic2 {
-    width: 67.8125em;
-    top: 11.5625em;
-    right: -1.5625em;
-  }
-  #sbs-1161 .cs-box {
-    width: 12.3125em;
-    height: 11.125em;
-    padding: 0.5rem;
-    /* prevents padding and border from affecting height and width */
-    box-sizing: border-box;
-    background-color: var(--secondary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    z-index: 20;
-    left: 0;
-    bottom: 0;
-  }
-  #sbs-1161 .cs-number {
-    /* 20px - 39px */
-    font-size: clamp(1.25rem, 4vw, 2.4375rem);
-    text-align: center;
-    line-height: 1.2em;
-    font-weight: 700;
-    width: 100%;
-    /* 4px - 8px */
-    margin: 0 0 clamp(0.25rem, 1vw, 0.5rem);
-    color: var(--bodyTextColorWhite);
-    display: block;
-  }
-  #sbs-1161 .cs-desc {
-    /* 12px - 16px */
-    font-size: clamp(0.75rem, 1.9vw, 1rem);
-    text-align: center;
-    line-height: 1.2em;
-    font-weight: 700;
-    width: 100%;
-    max-width: 12ch;
-    margin: 0;
-    color: var(--bodyTextColorWhite);
-    display: block;
-  }
-}
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #sbs-1161 .cs-container {
-    max-width: 80rem;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #sbs-1161 .cs-image-group {
-    font-size: min(1.2vw, 1em);
-    flex: none;
-  }
-}
-/*-- -------------------------- -->
-<---       Side By Side         -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #sbs-r {
-    padding: var(--sectionPadding);
-  }
-  #sbs-r .cs-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    max-width: 80rem;
-    width: 100%;
-    row-gap: 2.5rem;
-  }
-  #sbs-r .cs-left {
-    position: relative;
-    height: 39.75em;
-    /* using ems so we can use font size to scale the whole section */
-    width: 39.4375em;
-    /* scaling the font size with the view width */
-    font-size: min(2.31vw, 0.7em);
-  }
-  #sbs-r .cs-picture {
-    position: absolute;
-    display: block;
-    /* clips img tag corners */
-    overflow: hidden;
-  }
-  #sbs-r .cs-picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* makes image act like a background image */
-    object-fit: cover;
-    border-radius: 0.75rem;
-  }
-  #sbs-r .cs-picture1 {
-    top: 0;
-    right: 0;
-    height: 36.3125em;
-    width: 32.625em;
-  }
-  #sbs-r .cs-picture2 {
-    bottom: 0;
-    left: 0;
-    /* 6px - 12px */
-    border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
-    background-color: #fff;
-    border-radius: 1rem;
-    height: 25em;
-    width: 25.875em;
-    box-shadow: 2px 2px 10px #00000024;
-  }
-  #sbs-r .cs-right {
-    margin: auto;
-    max-width: 33.875rem;
-  }
-  #sbs-r .cs-topper {
-    margin-bottom: 0.25rem;
-    text-align: left;
-  }
-  #sbs-r .cs-title {
-    max-width: 50rem;
-    text-align: left;
-  }
-  #sbs-r .cs-text {
-    margin-bottom: 1rem;
-    max-width: 46.875rem;
-    text-align: left;
-  }
-  #sbs-r .cs-text:last-of-type {
-    margin-bottom: 2rem;
-  }
-  #sbs-r .cs-flex-group {
-    position: relative;
-    border-radius: 1rem;
-    background-color: #f7f7f7;
-    /* 16px - 32px */
-    padding: clamp(1rem, 3vw, 2rem);
-  }
-  #sbs-r .cs-flex-p {
-    margin: 0 0 1rem;
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    line-height: 1.5em;
-    color: #353535;
-  }
-  #sbs-r .cs-name {
-    display: block;
-    margin: 0 0 0.25rem;
-    text-transform: uppercase;
-    font-size: 1rem;
-    line-height: 1.2em;
-    font-weight: bold;
-    color: var(--headerColor);
-  }
-  #sbs-r .cs-job {
-    display: block;
-    font-size: 0.875rem;
-    line-height: 1.5em;
-    color: #353535;
-  }
-  #sbs-r .cs-quote-icon {
-    position: absolute;
-    bottom: 0rem;
-    /* 16px - 32px */
-    right: clamp(1rem, 4vw, 2rem);
-    height: auto;
-    /* 60px - 136px */
-    width: clamp(3.75rem, 10vw, 8.5rem);
-  }
-}
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #sbs-r .cs-container {
-    flex-flow: row;
-    justify-content: space-between;
-    gap: 3.25rem;
-  }
-  #sbs-r .cs-left {
-    /* sends it to the right */
-    order: 2;
-    font-size: min(1.2vw, 1em);
-    flex: none;
-  }
-  #sbs-r .cs-right {
-    margin: 0;
+  #sbs-1161 .cs-picture2 img {
+    border-radius: 0.5rem;
   }
 }
 /*-- -------------------------- -->
@@ -748,18 +478,16 @@
   }
 }
 /*-- -------------------------- -->
-<---       Meet The Team        -->
+<---          Services          -->
 <--- -------------------------- -*/
-/* Mobile - 360px */
+/* Mobile - 360px- Contains Hover State */
 @media only screen and (min-width: 0rem) {
-  #meet-team-220 {
-    /* centers the button */
-    text-align: center;
+  #services-30 {
     padding: var(--sectionPadding);
   }
-  #meet-team-220 .cs-container {
+  #services-30 .cs-container {
     width: 100%;
-    /* changes to 1280px at desktop */
+    /* changes to 1280px at tablet */
     max-width: 34.375rem;
     margin: auto;
     display: flex;
@@ -768,7 +496,7 @@
     /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
   }
-  #meet-team-220 .cs-content {
+  #services-30 .cs-content {
     /* set text align to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
@@ -777,113 +505,105 @@
     /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
-  #meet-team-220 .cs-picture {
+  #services-30 .cs-card-group {
     width: 100%;
-    margin-bottom: 1rem;
-    display: block;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  #services-30 .cs-item {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+  }
+  #services-30 .cs-picture {
+    /* height divided by width */
+    aspect-ratio: 328/220;
     position: relative;
-    aspect-ratio: 296/320;
-    /* clips the corners off the image tag */
+    display: block;
+    border-radius: 0.625rem;
+    /* Keeps image from bleeding outside the picture element */
     overflow: hidden;
   }
-  #meet-team-220 .cs-picture img {
+  #services-30 .cs-picture:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0%;
+    width: 100%;
+    background: var(--primary);
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: height 0.3s;
+  }
+  #services-30 .cs-picture img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    /* Makes image behave like a background image */
+    /* Makes img tag act like a background image */
     object-fit: cover;
     transition: transform 0.7s;
-    border-radius: 0.375rem;
   }
-  #meet-team-220 .cs-card-group {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  #meet-team-220 .cs-item {
-    list-style: none;
-    /* Changes on tablet */
-    width: 100%;
-    max-width: 21.25rem;
-    /* 16px - 20px */
-    padding: clamp(1rem, 2vw, 1.25rem);
-    padding-bottom: 1.25rem;
+  #services-30 .cs-box {
+    /* Centers the button */
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    /* -32px to -48px */
+    margin-top: calc(clamp(2rem, 7vw, 3rem)*-1);
+    /* 24px to 28px */
+    padding-top: clamp(1.5rem, 2.4vw, 1.75rem);
+    padding-bottom: clamp(1.5rem, 2.4vw, 1.75rem);
+    background: #fff;
+    border-radius: 0.5rem;
     box-shadow: 2px 2px 10px #00000024;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* prevents padding from adding to height and width */
-    box-sizing: border-box;
-    border-radius: 0.75rem;
+    position: relative;
+    z-index: 10;
   }
-  #meet-team-220 .cs-item:hover .cs-picture img {
-    transform: scale(1.1);
-  }
-  #meet-team-220 .cs-name {
-    font-size: 1.25rem;
+  #services-30 .cs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 2vw, 1.5625rem);
+    text-align: center;
     line-height: 1.2em;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
+    font-weight: bold;
     color: var(--headerColor);
-    display: block;
-  }
-  #meet-team-220 .cs-job-title {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-    color: var(--headerColor);
-    display: block;
-  }
-  #meet-team-220 .cs-social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-  }
-  #meet-team-220 .cs-link {
-    /* 28px - 32px */
-    width: clamp(1.75rem, 3vw, 2rem);
-    /* 28px - 32px */
-    height: clamp(1.75rem, 3vw, 2rem);
-    /* After making the a tag into a box, we center the image inside of it */
-    border-radius: 0.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* creates the 3D space for the 3D effect when spinning */
-    transform-style: preserve-3d;
-    perspective: 700px;
-  }
-  #meet-team-220 .cs-link:hover img {
-    transform: translateY(-0.3125rem) rotateY(360deg);
-  }
-  #meet-team-220 .cs-link img {
-    width: 0.875rem;
-    height: auto;
-    transition: transform 0.7s;
+    /* 24px to 28px */
+    margin: 0 0 clamp(1.5rem, 2.4vw, 1.75rem);
   }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #meet-team-220 .cs-container {
-    max-width: 80em;
+  #services-30 .cs-container {
+    max-width: 80rem;
   }
-  #meet-team-220 .cs-card-group {
+  #services-30 .cs-card-group {
+    flex-wrap: wrap;
     flex-direction: row;
   }
-  #meet-team-220 .cs-item {
-    width: 31%;
+  #services-30 .cs-item {
+    width: 47%;
   }
-  #meet-team-220 .cs-picture {
-    /* 240px - 360px */
-    height: clamp(15rem, 31.25vw, 22.5rem);
-    aspect-ratio: none;
+  #services-30 .cs-picture {
+    /* Reset aspect ratio, don't need it anymore */
+    aspect-ratio: initial;
+    /* 240px - 420px */
+    height: clamp(15rem, 31.5vw, 26.25rem);
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #services-30 .cs-card-group {
+    max-width: 100%;
+    flex-wrap: nowrap;
+  }
+  #services-30 .cs-item {
+    width: 24%;
   }
 }
 /*-- -------------------------- -->
@@ -1022,6 +742,145 @@
   }
 }
 /*-- -------------------------- -->
+<---       Meet The Team        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #meet-team-220 {
+    /* centers the button */
+    text-align: center;
+    padding: var(--sectionPadding);
+  }
+  #meet-team-220 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #meet-team-220 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #meet-team-220 .cs-picture {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: block;
+    position: relative;
+    aspect-ratio: 296/320;
+    /* clips the corners off the image tag */
+    overflow: hidden;
+    border-radius: 0.375rem;
+  }
+  #meet-team-220 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* Makes image behave like a background image */
+    object-fit: cover;
+    transition: transform 0.7s;
+  }
+  #meet-team-220 .cs-card-group {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  #meet-team-220 .cs-item {
+    list-style: none;
+    /* Changes on tablet */
+    width: 100%;
+    max-width: 21.25rem;
+    /* 16px - 20px */
+    padding: clamp(1rem, 2vw, 1.25rem);
+    padding-bottom: 1.25rem;
+    box-shadow: 2px 2px 10px #00000024;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+    border-radius: 0.625rem;
+  }
+  #meet-team-220 .cs-item:hover .cs-picture img {
+    transform: scale(1.1);
+  }
+  #meet-team-220 .cs-name {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--headerColor);
+    display: block;
+  }
+  #meet-team-220 .cs-job-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--headerColor);
+    display: block;
+  }
+  #meet-team-220 .cs-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  #meet-team-220 .cs-link {
+    /* 28px - 32px */
+    width: clamp(1.75rem, 3vw, 2rem);
+    /* 28px - 32px */
+    height: clamp(1.75rem, 3vw, 2rem);
+    /* After making the a tag into a box, we center the image inside of it */
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* creates the 3D space for the 3D effect when spinning */
+    transform-style: preserve-3d;
+    perspective: 700px;
+  }
+  #meet-team-220 .cs-link:hover img {
+    transform: translateY(-0.3125rem) rotateY(360deg);
+  }
+  #meet-team-220 .cs-link img {
+    width: 0.875rem;
+    height: auto;
+    transition: transform 0.7s;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #meet-team-220 .cs-container {
+    max-width: 80em;
+  }
+  #meet-team-220 .cs-card-group {
+    flex-direction: row;
+  }
+  #meet-team-220 .cs-item {
+    width: 31%;
+  }
+  #meet-team-220 .cs-picture {
+    /* 240px - 360px */
+    height: clamp(15rem, 31.25vw, 22.5rem);
+    aspect-ratio: none;
+  }
+}
+/*-- -------------------------- -->
 <---          Reviews           -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
@@ -1030,6 +889,7 @@
     padding: var(--sectionPadding);
     position: relative;
     z-index: 1;
+    background-color: #f7f7f7;
   }
   #reviews-864:before {
     content: "";
@@ -1086,7 +946,7 @@
     background-color: #fff;
     /* prevents padding from adding to height and width */
     box-sizing: border-box;
-    border-radius: 0.625rem;
+    border-radius: 0.75rem;
     box-shadow: 2px 2px 10px #00000024;
     display: flex;
     justify-content: center;
