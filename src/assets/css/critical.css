@@ -56,6 +56,7 @@
     align-items: center;
     /* 80px - 120px */
     gap: clamp(5rem, 10vw, 7.5rem);
+    margin-top: 5rem;
   }
   #hero-446 .cs-content {
     margin: auto;
@@ -168,6 +169,9 @@
 }
 /* In-Between - 650px */
 @media only screen and (min-width: 40.625rem) {
+  #hero-446 .cs-container {
+    margin-top: 0;
+  }
   #hero-446 .cs-card-group {
     flex-wrap: nowrap;
   }
