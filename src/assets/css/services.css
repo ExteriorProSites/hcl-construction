@@ -6,6 +6,7 @@
 @media only screen and (min-width: 0rem) {
   #services-30 {
     padding: var(--sectionPadding);
+    background-color: #f7f7f7;
   }
   #services-30 .cs-container {
     width: 100%;
@@ -45,6 +46,7 @@
     aspect-ratio: 328/220;
     position: relative;
     display: block;
+    border-radius: 0.625rem;
     /* Keeps image from bleeding outside the picture element */
     overflow: hidden;
   }
@@ -70,6 +72,7 @@
     /* Makes img tag act like a background image */
     object-fit: cover;
     transition: transform 0.7s;
+    border-radius: 0.125rem;
   }
   #services-30 .cs-box {
     /* Centers the button */
@@ -82,6 +85,7 @@
     padding-top: clamp(1.5rem, 2.4vw, 1.75rem);
     padding-bottom: clamp(1.5rem, 2.4vw, 1.75rem);
     background: #fff;
+    border-radius: 0.5rem;
     box-shadow: 2px 2px 10px #00000024;
     position: relative;
     z-index: 10;
@@ -153,6 +157,7 @@
     /* 20px - 60px left and right */
     padding: clamp(2.5rem, 7vw, 3.75rem) clamp(1.25rem, 5.5vw, 3.75rem);
     background-color: #fafbfc;
+    border-radius: 0.75rem;
     /* prevents padding from affecting width and height */
     box-sizing: border-box;
     /* clips the pseudo element */
@@ -193,6 +198,7 @@
     /* sends it to the top */
     order: -1;
     position: relative;
+    border-radius: 0.625rem;
   }
   #sbs-456 .cs-picture img {
     position: absolute;
@@ -263,6 +269,7 @@
     /* 20px - 60px left and right */
     padding: clamp(2.5rem, 7vw, 3.75rem) clamp(1.25rem, 5.5vw, 3.75rem);
     background-color: #fafbfc;
+    border-radius: 0.75rem;
     /* prevents padding from affecting width and height */
     box-sizing: border-box;
     /* clips the pseudo element */
@@ -303,6 +310,7 @@
     /* sends it to the top */
     order: -1;
     position: relative;
+    border-radius: 0.625rem;
   }
   #sbsr-457 .cs-picture img {
     position: absolute;
@@ -520,6 +528,7 @@
     background-color: #fff;
     /* prevents padding from adding to height and width */
     box-sizing: border-box;
+    border-radius: 0.75rem;
     box-shadow: 2px 2px 10px #00000024;
     display: flex;
     justify-content: center;
@@ -648,7 +657,7 @@
 @media only screen and (min-width: 0rem) {
   #faq-326 {
     padding: var(--sectionPadding);
-    background-color: var(--backgroundOffset);
+    background-color: #f7f7f7;
   }
   #faq-326 .cs-container {
     width: 100%;
@@ -684,22 +693,25 @@
   #faq-326 .cs-faq-item {
     list-style: none;
     width: 100%;
-    background-color: white;
-    box-shadow: 2px 2px 10px #00000024;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #0000000f;
+    border-radius: 0.5rem;
     /* clips all corners of the button that overlap the rounded border */
     overflow: hidden;
     transition: border-bottom 0.3s;
   }
   #faq-326 .cs-faq-item.active .cs-button {
-    background-color: var(--primary);
-    color: var(--bodyTextColorWhite);
+    background: var(--primary);
+    color: #fff;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
   #faq-326 .cs-faq-item.active .cs-button:before {
-    background-color: var(--bodyTextColorWhite);
+    background-color: #fff;
     transform: rotate(315deg);
   }
   #faq-326 .cs-faq-item.active .cs-button:after {
-    background-color: var(--bodyTextColorWhite);
+    background-color: #fff;
     transform: rotate(-315deg);
   }
   #faq-326 .cs-faq-item.active .cs-item-p {
@@ -716,8 +728,9 @@
     font-weight: bold;
     /* 16px - 20px */
     padding: clamp(1rem, 1.3vw, 1.25rem);
-    background-color: white;
+    background-color: #fff;
     border: none;
+    border-radius: 0.5rem;
     color: var(--headerColor);
     display: block;
     width: 100%;
