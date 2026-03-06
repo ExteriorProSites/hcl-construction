@@ -1,4 +1,3 @@
-<br/>
 <div align="center">
   <h3 align="center">User Manual</h3>
 </div>
