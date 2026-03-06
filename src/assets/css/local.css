@@ -871,26 +871,26 @@
     height: 12.5em;
     top: 0em;
     left: 0em;
-    box-shadow: 2px 2px 60px #09090994;
+    box-shadow: 2px 2px 20px #09090994;
   }
   #sbsr-1286 .cs-picture2 {
     width: 15.25em;
     height: 16.875em;
     top: 2.5em;
     right: 2.0625em;
-    box-shadow: 2px 2px 60px #09090994;
+    box-shadow: 2px 2px 20px #09090994;
   }
   #sbsr-1286 .cs-picture3 {
     width: 15.25em;
     height: 16.875em;
     top: 13.75em;
     left: 0;
-    box-shadow: 2px 2px 60px #09090994;
+    box-shadow: 2px 2px 20px #09090994;
   }
   #sbsr-1286 .cs-picture4 {
     width: 19.375em;
     height: 21.4375em;
-    box-shadow: 2px 2px 40px #090909d6;
+    box-shadow: 2px 2px 15px #090909d6;
     top: 18.375em;
     right: 0;
     z-index: 10;
@@ -900,14 +900,14 @@
     height: 16.875em;
     top: 31.875em;
     left: 0em;
-    box-shadow: 2px 2px 60px #09090994;
+    box-shadow: 2px 2px 20px #09090994;
   }
   #sbsr-1286 .cs-picture6 {
     width: 15.25em;
     height: 11.875em;
     bottom: 0em;
     right: 2.0625em;
-    box-shadow: 2px 2px 60px #09090994;
+    box-shadow: 2px 2px 20px #09090994;
   }
 }
 /* Small Desktop - 1024px */
@@ -931,6 +931,16 @@
   #sbsr-1286 .cs-image-group {
     font-size: min(1.2vw, 1em);
     flex: none;
+  }
+  #sbsr-1286 .cs-picture1,
+  #sbsr-1286 .cs-picture2,
+  #sbsr-1286 .cs-picture3,
+  #sbsr-1286 .cs-picture5,
+  #sbsr-1286 .cs-picture6 {
+    box-shadow: 2px 2px 60px #09090994;
+  }
+  #sbsr-1286 .cs-picture4 {
+    box-shadow: 2px 2px 40px #09090994;
   }
 }
 /* Large Desktop - 1200px */
