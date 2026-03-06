@@ -1,7 +1,3 @@
-<div align="center">
-  <h3 align="center">User Manual</h3>
-</div>
-
 ## Table of Contents
 
 - <a href="#prerequisites">Prerequisites</a>
