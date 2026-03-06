@@ -1,99 +1,115 @@
 ---
-title: 'Contact | Lakes Area Landscaping'
+title: 'Contact | HCL Construction'
 description: 'Meta description for the page'
 preloadImg: '/assets/images/new-hero.jpg'
 permalink: 'contact/'
 eleventyNavigation:
-    key: Contact Us
-    order: 700
-    hideOnDesktop: true
+    key: Contact
+    order: 800
 ---
 
-{% extends "layouts/base.html" %}
+{% extends "layouts/contact-base.html" %}
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/contact.css">
+    <link rel="stylesheet" href="/assets/css/root.css">
 {% endblock %}
 
 {% block body %}
 
     <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
-
-    <section id="int-hero">
-        <h1 id="home-h">Contact Us</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="../assets/images/new-hero.jpg">
-            <source media="(min-width: 601px)" srcset="../assets/images/new-hero.jpg">
-            <img aria-hidden="true" decoding="async" src="../assets/images/new-hero.jpg" alt="grass" loading="eager" width="2500" height="1667">
-        </picture>
-    </section>
-
-    <!-- ============================================ -->
     <!--                Contact Form                  -->
     <!-- ============================================ -->
 
-    <section id="cs-contact">
-        <div class="cs-container">
-            <form id="cs-form" name="Contact Form" method="post">
-                <div class="cs-content">
-                    {# <span class="cs-topper">Contact</span> #}
-                    <h2 class="cs-title">Get in Touch</h2>
-                    <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.
-                    </p>
-                </div>
-                <label>
-                    Name
-                    <input required type="text" id="name" name="name" placeholder="Name">
-                </label>
-                <label>
-                    Email
-                    <input required type="text" id="email" name="email" placeholder="Email">
-                </label>
-                <label>
-                    Phone
-                    <input required type="text" id="phone" name="phone" placeholder="Phone">
-                </label>
-                <label>
-                    How Did You Find Us
-                    <input type="text" id="find" name="find-us" placeholder="How did you find us?">
-                </label>
-                <label class="cs-label-message">
-                    Message
-                    <textarea required name="Message" id="message" placeholder="Write message..."></textarea>
-                </label>
-                <button class="cs-button-solid" type="submit">Submit Message</button>
-            </form>
-            <div class="cs-right-section">
-                <!--Email-->
-                <span class="cs-header">Email</span>
-                <a class="cs-link" href="mailto:{{client.email}}">{{client.email}}</a>
-                <!--Phone-->
-                <span class="cs-header">Phone</span>
-                <a class="cs-link" href="tel:{{client.phoneForTel}}">{{client.phoneFormatted}}</a>
-                <!--Address-->
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="{{client.address.mapLink}}">
-                    {{client.address.lineOne}},
-                    <br/>
-                    {{client.address.lineTwo}},
-                    <br/>
-                    <span class="cs-block">
-                        {{client.address.city}}
-                        {{client.address.state}}
-                        {{client.address.zip}}
-                    </span>
-                </a>
+    <section class="quote-section">
+        <div class="quote-card">
+            <h1>Get A Fast Quote</h1>
+            <p class="subtext">
+            We receive your request instantly via SMS and usually respond within an hour
+            </p>
 
-                <!-- Background Image-->
-                <picture class="cs-bg-picture">
-                    <source media="(min-width: 601px)" srcset="../assets/images/services-2-1-m.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/../assets/images/services-2-1-m.jpg" alt="building" loading="lazy" width="2500" height="1667">
-                </picture>
+            <form
+            name="fast-quote"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thank-you/"
+            class="quote-form"
+            >
 
+            <!-- Required hidden form name for Netlify -->
+            <input type="hidden" name="form-name" value="fast-quote" />
+
+            <!-- Honeypot spam protection field -->
+            <p style="display:none;">
+                <label>
+                Don’t fill this out if you're human:
+                <input name="bot-field" />
+                </label>
+            </p>
+
+            <div class="form-row">
+                <input 
+                type="text" 
+                name="first_name" 
+                placeholder="First Name" 
+                required 
+                />
+                <input 
+                type="text" 
+                name="last_name" 
+                placeholder="Last Name" 
+                required 
+                />
             </div>
+
+            <div class="form-row">
+                <input 
+                type="email" 
+                name="email" 
+                placeholder="Email" 
+                required 
+                />
+                <input 
+                type="tel" 
+                name="phone" 
+                placeholder="Phone" 
+                required 
+                />
+            </div>
+
+            <div class="form-row">
+                <input 
+                type="text" 
+                name="address" 
+                placeholder="Address" 
+                />
+                <input 
+                type="text" 
+                name="city" 
+                placeholder="City" 
+                />
+            </div>
+
+            <div class="form-row">
+                <textarea 
+                name="notes" 
+                placeholder="Notes / Services Needed"
+                ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Get Your Fast Quote
+            </button>
+
+            </form>
+
+            <p class="call-text">
+            For Immediate Assistance Please Call
+            <a href="tel:2184617373">218-461-7373</a>
+            </p>
+
         </div>
-    </section>
+        </section>
+
 {% endblock %}

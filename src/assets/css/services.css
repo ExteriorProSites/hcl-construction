@@ -1,168 +1,28 @@
-/* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
-/*-- -------------------------- -->
-<---          Services          -->
-<--- -------------------------- -*/
-/* Mobile - 360px- Contains Hover State */
-@media only screen and (min-width: 0rem) {
-  #services-30 {
-    padding: var(--sectionPadding);
-    background-color: #f7f7f7;
-  }
-  #services-30 .cs-container {
-    width: 100%;
-    /* changes to 1280px at tablet */
-    max-width: 34.375rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #services-30 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-  }
-  #services-30 .cs-card-group {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-  #services-30 .cs-item {
-    list-style: none;
-    margin: 0;
-    width: 100%;
-  }
-  #services-30 .cs-picture {
-    /* height divided by width */
-    aspect-ratio: 328/220;
-    position: relative;
-    display: block;
-    border-radius: 0.625rem;
-    /* Keeps image from bleeding outside the picture element */
-    overflow: hidden;
-  }
-  #services-30 .cs-picture:before {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 0%;
-    width: 100%;
-    background: var(--primary);
-    opacity: 0.8;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transition: height 0.3s;
-  }
-  #services-30 .cs-picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* Makes img tag act like a background image */
-    object-fit: cover;
-    transition: transform 0.7s;
-    border-radius: 0.125rem;
-  }
-  #services-30 .cs-box {
-    /* Centers the button */
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
-    /* -32px to -48px */
-    margin-top: calc(clamp(2rem, 7vw, 3rem)*-1);
-    /* 24px to 28px */
-    padding-top: clamp(1.5rem, 2.4vw, 1.75rem);
-    padding-bottom: clamp(1.5rem, 2.4vw, 1.75rem);
-    background: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 10px #00000024;
-    position: relative;
-    z-index: 10;
-  }
-  #services-30 .cs-h3 {
-    /* 20px - 25px */
-    font-size: clamp(1.25rem, 2vw, 1.5625rem);
-    text-align: center;
-    line-height: 1.2em;
-    font-weight: bold;
-    color: var(--headerColor);
-    /* 24px to 28px */
-    margin: 0 0 clamp(1.5rem, 2.4vw, 1.75rem);
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #services-30 .cs-container {
-    max-width: 80rem;
-  }
-  #services-30 .cs-card-group {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-  #services-30 .cs-item {
-    width: 47%;
-  }
-  #services-30 .cs-picture {
-    /* Reset aspect ratio, don't need it anymore */
-    aspect-ratio: initial;
-    /* 240px - 420px */
-    height: clamp(15rem, 31.5vw, 26.25rem);
-  }
-}
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #services-30 .cs-card-group {
-    max-width: 100%;
-    flex-wrap: nowrap;
-  }
-  #services-30 .cs-item {
-    width: 24%;
-  }
-}
 /*-- -------------------------- -->
 <---       Side By Side         -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #sbs-456 {
+  #sbs-2291 {
     padding: var(--sectionPadding);
+    overflow: hidden;
+    background: var(--secondary);
   }
-  #sbs-456 .cs-container {
+  #sbs-2291 .cs-container {
     width: 100%;
-    max-width: 80em;
+    /* changes to 1280px at desktop */
+    max-width: 36.5rem;
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
   }
-  #sbs-456 .cs-content {
+  #sbs-2291 .cs-content {
+    /* set text align to left if content needs to be left aligned */
     text-align: left;
-    width: auto;
-    max-width: 40.625rem;
-    margin: 0 1rem;
-    margin-top: -18.75rem;
-    /* 40px - 60px top and bottom */
-    /* 20px - 60px left and right */
-    padding: clamp(2.5rem, 7vw, 3.75rem) clamp(1.25rem, 5.5vw, 3.75rem);
-    background-color: #fafbfc;
-    border-radius: 0.75rem;
-    /* prevents padding from affecting width and height */
-    box-sizing: border-box;
-    /* clips the pseudo element */
-    overflow: hidden;
-    box-shadow: 0px 24px 54px rgba(87, 107, 147, 0.12);
+    width: 100%;
     display: flex;
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
@@ -170,76 +30,99 @@
     position: relative;
     z-index: 10;
   }
-  #sbs-456 .cs-content:before {
-    /* green border top */
-    content: "";
-    width: 100%;
-    height: 0.5rem;
-    background: var(--primary);
-    opacity: 1;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-  }
-  #sbs-456 .cs-text {
+  #sbs-2291 .cs-text {
     margin-bottom: 1rem;
   }
-  #sbs-456 .cs-text:last-of-type {
+  #sbs-2291 .cs-text:last-of-type {
     margin-bottom: 2rem;
   }
-  #sbs-456 .cs-picture {
-    width: 100%;
-    height: auto;
-    height: 27.6875rem;
-    /* clips the img corners */
-    overflow: hidden;
+  #sbs-2291 .cs-h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5em;
+    margin: 0 0 0.75rem;
+    color: var(--tertiaryLight);
+  }
+  #sbs-2291 .cs-ul {
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+  #sbs-2291 .cs-li {
+    font-size: 1rem;
+    line-height: 1.5em;
+    list-style: none;
+    /* 20px - 24px */
+    padding-left: clamp(1.25rem, 3vw, 1.5rem);
+    color: var(--tertiaryLight);
+    position: relative;
+  }
+  #sbs-2291 .cs-li::before {
+    content: "✔";
+    width: 0.625rem;
+    height: 0.625rem;
+    margin-top: 0.125rem;
+    color: var(--primary);
     display: block;
-    /* sends it to the top */
+    position: absolute;
+    top: 0;
+    left: clamp(0px, 0.5vw, 5px);
+    transform: rotate(-8deg);
+  }
+  #sbs-2291 .cs-image-group {
+    width: 100%;
+    height: 126vw;
+    max-height: 39.125rem;
+    display: block;
     order: -1;
     position: relative;
-    border-radius: 0.625rem;
+    z-index: 1;
   }
-  #sbs-456 .cs-picture img {
+  #sbs-2291 .cs-picture {
+    /* big background image */
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+  #sbs-2291 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  .sbs-1 {
-    background-color: #f7f7f7;
-  }
-  .sbs-2 {
-    background-color: white;
+    box-shadow: 2px 2px 20px #0909099b;
   }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #sbs-456 .cs-container {
-    padding: 3.75rem 0;
-    position: relative;
-    align-items: flex-end;
-    justify-content: center;
-  }
-  #sbs-456 .cs-content {
-    width: 65%;
-    margin: 0;
-  }
-  #sbs-456 .cs-picture {
-    /* 465px - 617px */
-    width: clamp(29.0625rem, 53vw, 38.5625rem);
-    position: absolute;
-    left: 0;
-    height: 100%;
+  #sbs-2291 .cs-box {
+    flex-direction: row;
+    align-items: center;
   }
 }
-/* Small Desktop - 1024px */
+/* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #sbs-456 .cs-content {
-    /* 90px - 108px */
-    margin-right: clamp(5rem, 8.5vw, 6.75rem);
+  #sbs-2291 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+  #sbs-2291 .cs-content {
+    padding-left: 3.25rem;
+  }
+  #sbs-2291 .cs-image-group {
+    height: auto;
+    min-height: 34.375rem;
+    max-height: 100%;
   }
 }
 /*-- -------------------------- -->
@@ -247,34 +130,26 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #sbsr-457 {
+  #sbsr-2289 {
     padding: var(--sectionPadding);
+    overflow: hidden;
+    background: var(--secondaryLight);
   }
-  #sbsr-457 .cs-container {
+  #sbsr-2289 .cs-container {
     width: 100%;
-    max-width: 80rem;
+    /* changes to 1280px at desktop */
+    max-width: 36.5rem;
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
   }
-  #sbsr-457 .cs-content {
+  #sbsr-2289 .cs-content {
+    /* set text align to left if content needs to be left aligned */
     text-align: left;
-    width: auto;
-    max-width: 40.625rem;
-    margin: 0 1rem;
-    margin-top: -18.75rem;
-    /* 40px - 60px top and bottom */
-    /* 20px - 60px left and right */
-    padding: clamp(2.5rem, 7vw, 3.75rem) clamp(1.25rem, 5.5vw, 3.75rem);
-    background-color: #fafbfc;
-    border-radius: 0.75rem;
-    /* prevents padding from affecting width and height */
-    box-sizing: border-box;
-    /* clips the pseudo element */
-    overflow: hidden;
-    box-shadow: 0px 24px 54px rgba(87, 107, 147, 0.12);
+    width: 100%;
     display: flex;
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
@@ -282,515 +157,131 @@
     position: relative;
     z-index: 10;
   }
-  #sbsr-457 .cs-content:before {
-    /* green border top */
-    content: "";
-    width: 100%;
-    height: 0.5rem;
-    background: var(--primary);
-    opacity: 1;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-  }
-  #sbsr-457 .cs-text {
+  #sbsr-2289 .cs-text {
     margin-bottom: 1rem;
   }
-  #sbsr-457 .cs-text:last-of-type {
+  #sbsr-2289 .cs-text:last-of-type {
     margin-bottom: 2rem;
   }
-  #sbsr-457 .cs-picture {
-    width: 100%;
-    height: auto;
-    height: 27.6875rem;
-    /* clips the img corners */
-    overflow: hidden;
+  #sbsr-2289 .cs-h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5em;
+    margin: 0 0 0.75rem;
+    color: var(--tertiaryLight);
+  }
+  #sbsr-2289 .cs-ul {
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+  #sbsr-2289 .cs-li {
+    font-size: 1rem;
+    line-height: 1.5em;
+    list-style: none;
+    /* 20px - 24px */
+    padding-left: clamp(1.25rem, 3vw, 1.5rem);
+    color: var(--tertiaryLight);
+    position: relative;
+  }
+  #sbsr-2289 .cs-li::before {
+    content: "✔";
+    width: 0.625rem;
+    height: 0.625rem;
+    margin-top: 0.125rem;
+    color: var(--primary);
     display: block;
-    /* sends it to the top */
+    position: absolute;
+    top: 0;
+    left: clamp(0px, 0.5vw, 5px);
+    transform: rotate(-8deg);
+  }
+  #sbsr-2289 .cs-image-group {
+    width: 100%;
+    height: 126vw;
+    max-height: 39.125rem;
+    display: block;
     order: -1;
     position: relative;
-    border-radius: 0.625rem;
-  }
-  #sbsr-457 .cs-picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  .sbsr-1 {
-    background-color: white;
-  }
-  .sbsr-2 {
-    background-color: #f7f7f7;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #sbsr-457 .cs-container {
-    padding: 3.75rem 0;
-    position: relative;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  #sbsr-457 .cs-content {
-    width: 65%;
-    margin: 0;
-  }
-  #sbsr-457 .cs-picture {
-    /* 465px - 617px */
-    width: clamp(29.0625rem, 53vw, 38.5625rem);
-    position: absolute;
-    right: 0;
-    height: 100%;
-  }
-}
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #sbsr-457 .cs-content {
-    /* 90px - 108px */
-    margin-left: clamp(5rem, 8.5vw, 6.75rem);
-  }
-}
-/*-- -------------------------- -->
-<---           Stats            -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #stats-340-1112 {
-    padding: var(--sectionPadding);
-    position: relative;
     z-index: 1;
   }
-  #stats-340-1112 .cs-background {
+  #sbsr-2289 .cs-picture {
+    /* big background image */
     width: 100%;
-    height: 100%;
-    background-color: #1a1a1a;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    z-index: -1;
-  }
-  #stats-340-1112 .cs-background img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    opacity: 0.2;
-  }
-  #stats-340-1112 .cs-card-group {
-    width: 100%;
-    /* changes to 1280px at desktop */
-    max-width: 37.5rem;
-    margin: auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-  #stats-340-1112 .cs-item {
-    list-style: none;
-    min-width: auto;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  #stats-340-1112 .cs-picture {
-    /* 60px - 80px */
-    width: clamp(3.75rem, 7.9vw, 5rem);
-    height: clamp(3.75rem, 7.9vw, 5rem);
-    margin-right: 1rem;
-    border: 3px solid #fff;
-    border-radius: 0.625rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* prevents border from adding to height and width */
-    box-sizing: border-box;
-    /* prevents flexbox from squishing it */
-    flex: none;
-  }
-  #stats-340-1112 .cs-icon {
-    /* 28px - 40px */
-    width: clamp(2rem, 3.9vw, 3rem);
-    height: auto;
-  }
-  #stats-340-1112 .cs-flex-group {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  #stats-340-1112 .cs-number {
-    font-size: var(--headerFontSize);
-    color: var(--bodyTextColorWhite);
-    font-weight: 900;
-    line-height: 1.2em;
-    margin: 0;
-    display: block;
-  }
-  #stats-340-1112 .cs-desc {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.4vw, 1rem);
-    line-height: 1.5em;
-    color: var(--bodyTextColorWhite);
-    display: block;
-  }
-}
-/* Tablet - 650px */
-@media only screen and (min-width: 40.625rem) {
-  #stats-340-1112 .cs-card-group {
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 3.125rem;
-    row-gap: 3.75rem;
-  }
-}
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #stats-340-1112 .cs-card-group {
-    max-width: 80rem;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-  }
-}
-/*-- -------------------------- -->
-<---          Reviews           -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #reviews-864 {
-    padding: var(--sectionPadding);
-    position: relative;
-    z-index: 1;
-  }
-  #reviews-864:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    opacity: 0.03;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  #reviews-864 .cs-container {
-    width: 100%;
-    /* changes to 1280px at tablet */
-    max-width: 34.375rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #reviews-864 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    max-width: 56.25rem;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-  }
-  #reviews-864 .cs-title {
-    /* 20 characters including spaces */
-    max-width: 20ch;
-  }
-  #reviews-864 .cs-text {
-    max-width: 100%;
-  }
-  #reviews-864 .cs-card-group {
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    /* 16px - 20px */
-    gap: clamp(1rem, 2.5vw, 1.15rem);
-  }
-  #reviews-864 .cs-item {
-    list-style: none;
-    width: 100%;
-    /* 20px - 32px */
-    padding: clamp(1.25rem, 4vw, 2rem);
-    background-color: #fff;
-    /* prevents padding from adding to height and width */
-    box-sizing: border-box;
-    border-radius: 0.75rem;
-    box-shadow: 2px 2px 10px #00000024;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    grid-column: span 12;
-    position: relative;
-  }
-  #reviews-864 .cs-flex-group {
-    width: 100%;
-    padding-bottom: 1.25rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1.25rem;
-  }
-  #reviews-864 .cs-profile {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    /* clips image corners to make circle */
-    overflow: hidden;
-    position: relative;
-    display: block;
-  }
-  #reviews-864 .cs-profile img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* makes the image behave like a background image */
-    object-fit: cover;
-  }
-  #reviews-864 .cs-name {
-    /* 20px - 25px */
-    font-size: clamp(1.25rem, 2vw, 1.5625rem);
-    line-height: 1.5em;
-    font-weight: 700;
-    margin: 0 0 0.5rem 0;
-    color: var(--headerColor);
-    display: block;
-  }
-  #reviews-864 .cs-job {
-    font-size: 0.875rem;
-    line-height: 1.2em;
-    font-weight: 400;
-    margin: 0;
-    color: var(--bodyTextColor);
-    display: block;
-  }
-  #reviews-864 .cs-review {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    line-height: 1.5em;
-    margin: 0;
-    margin-bottom: 1.25rem;
-    max-width: 27.75rem;
-    color: var(--bodyTextColor);
-  }
-  #reviews-864 .cs-stars {
-    width: 6.75rem;
-    height: auto;
-    margin: 0 0 0.5rem 0;
-    display: block;
-    filter: brightness(0) saturate(100%) invert(63%) sepia(87%) saturate(468%) hue-rotate(353deg) brightness(102%) contrast(104%);
-  }
-  #reviews-864 .cs-desc {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    line-height: 1.5em;
-    text-align: inherit;
-    margin: 0;
-    color: var(--bodyTextColor);
-  }
-  #reviews-864 .cs-quote1,
-  #reviews-864 .cs-quote2 {
-    display: none;
-    width: 12.125rem;
-    height: auto;
     display: block;
     position: absolute;
-    z-index: -1;
-  }
-  #reviews-864 .cs-quote1 {
     top: 0;
-    left: 0;
-  }
-  #reviews-864 .cs-quote2 {
     bottom: 0;
-    right: 0;
+    left: 0;
+  }
+  #sbsr-2289 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 2px 10px #09090958;
+  }
+  #sbsr-2289 .cs-number {
+    /* 31px - 49px */
+    font-size: clamp(1.9375rem, 4vw, 3.0625rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    margin: 0;
+    color: var(--primary);
+  }
+  #sbsr-2289 .cs-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2em;
+    margin: 0 0 0.5rem;
+    color: var(--headerColor);
+  }
+  #sbsr-2289 .cs-desc {
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: var(--tertiaryLight);
   }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #reviews-864 .cs-container {
-    max-width: 80rem;
-  }
-  #reviews-864 .cs-item {
-    grid-column: span 6;
-  }
-  #reviews-864 .cs-item:last-of-type {
-    grid-column: span 12;
-  }
-  #reviews-864 .cs-stars {
-    margin-top: auto;
-  }
-  #reviews-864 .cs-quote1,
-  #reviews-864 .cs-quote2 {
-    display: block;
+  #sbsr-2289 .cs-box {
+    flex-direction: row;
+    align-items: center;
   }
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #reviews-864 .cs-item {
-    grid-column: span 4;
+  #sbsr-2289 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.25rem;
   }
-  #reviews-864 .cs-item:last-of-type {
-    grid-column: span 4;
+  #sbsr-2289 .cs-content {
+    padding-right: 3.25rem;
+  }
+  #sbsr-2289 .cs-image-group {
+    height: auto;
+    min-height: 33.125rem;
+    max-height: 100%;
+    order: initial;
   }
 }
 /*-- -------------------------- -->
-<---            FAQ             -->
+<---            CTA             -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #faq-326 {
-    padding: var(--sectionPadding);
-    background-color: #f7f7f7;
-  }
-  #faq-326 .cs-container {
-    width: 100%;
-    max-width: 43.75rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #faq-326 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-  }
-  #faq-326 .cs-title {
-    margin: 0;
-  }
-  #faq-326 .cs-faq-group {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  #faq-326 .cs-faq-item {
-    list-style: none;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 2px 2px 10px #0000000f;
-    border-radius: 0.5rem;
-    /* clips all corners of the button that overlap the rounded border */
-    overflow: hidden;
-    transition: border-bottom 0.3s;
-  }
-  #faq-326 .cs-faq-item.active .cs-button {
-    background: var(--primary);
-    color: #fff;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  #faq-326 .cs-faq-item.active .cs-button:before {
-    background-color: #fff;
-    transform: rotate(315deg);
-  }
-  #faq-326 .cs-faq-item.active .cs-button:after {
-    background-color: #fff;
-    transform: rotate(-315deg);
-  }
-  #faq-326 .cs-faq-item.active .cs-item-p {
-    height: auto;
-    /* 20px - 24px top & bottom */
-    /* 16px - 24px left & right */
-    padding: clamp(1.25rem, 1.3vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
-    opacity: 1;
-  }
-  #faq-326 .cs-button {
-    font-size: 1rem;
-    line-height: 1.2em;
-    text-align: left;
-    font-weight: bold;
-    /* 16px - 20px */
-    padding: clamp(1rem, 1.3vw, 1.25rem);
-    background-color: #fff;
-    border: none;
-    border-radius: 0.5rem;
-    color: var(--headerColor);
-    display: block;
-    width: 100%;
+  #cta-52 {
+    padding: 0rem 1rem clamp(3.75rem, 7.82vw, 6.25rem);
     position: relative;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  #faq-326 .cs-button:hover {
-    cursor: pointer;
-  }
-  #faq-326 .cs-button:before {
-    /* left line */
-    content: "";
-    width: 0.5rem;
-    height: 0.125rem;
-    background-color: var(--headerColor);
-    opacity: 1;
-    border-radius: 50%;
-    position: absolute;
-    display: block;
-    top: 50%;
-    right: 1.5rem;
-    transform: rotate(45deg);
-    /* animate the transform from the left side of the x axis, and the center of the y */
-    transform-origin: left center;
-    transition: transform 0.5s;
-  }
-  #faq-326 .cs-button:after {
-    /* right line */
-    content: "";
-    width: 0.5rem;
-    height: 0.125rem;
-    background-color: var(--headerColor);
-    opacity: 1;
-    border-radius: 50%;
-    position: absolute;
-    display: block;
-    top: 50%;
-    right: 1.3125rem;
-    transform: rotate(-45deg);
-    /* animate the transform from the right side of the x axis, and the center of the y */
-    transform-origin: right center;
-    transition: transform 0.5s;
-  }
-  #faq-326 .cs-button-text {
-    width: 80%;
-    display: block;
-  }
-  #faq-326 .cs-item-p {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    line-height: 1.5em;
-    width: 90%;
-    height: 0;
-    margin: 0;
-    /* 16px - 24px */
-    padding: 0 clamp(1rem, 2vw, 1.5rem);
-    opacity: 0;
-    color: var(--bodyTextColor);
-    /* clips the text so it doesn't show up */
-    overflow: hidden;
-    transition: opacity 0.3s, padding-bottom 0.3s;
+    background: var(--secondary);
   }
 }

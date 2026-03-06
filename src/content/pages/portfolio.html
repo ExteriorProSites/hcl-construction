@@ -1,21 +1,104 @@
 ---
-permalink: false
+title: 'Duluth Roofing & Siding Projects | HCL Construction'
+description: 'Meta description for the page'
+preloadImg: '/assets/images/banner.jpg'
+permalink: 'our-work/'
 eleventyNavigation:
-    key: Portfolio
-    order: 400
+    key: Our Work
+    order: 500
 ---
 
-{# 
-    The starter kit uses the eleventy navigation plugin to render navigation items using data defined within the page,
-    making the navigation easy to control in larger projects.
-    https://www.11ty.dev/docs/plugins/navigation/
+{% extends "layouts/base.html" %}
 
-    In the starter kit, dropdowns are created by defining a "parent" in the eleventyNavigation frontmatter data of the child
-    page (see pages/project-one.html as an example).
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/portfolio.css">
+{% endblock %}
 
-    To create the dropdown "parent", which gets rendered as a <span> (as opposed to an <a>) we need to create a blank HTML
-    file with the eleventyNavigation frontmatter defined, as shown in this example file.
+{% block body %}
 
-    Make sure the permalink is set to "false", which prevents a HTML file being made in /public and keeps this page from
-    being written to the sitemap.
-#}
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Our Work</h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/images/banner.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/banner.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/banner.jpg" alt="grass" loading="eager" width="2500" height="1667">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                   Gallery                    -->
+    <!-- ============================================ -->
+
+    <section id="gallery-1086">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">Work We've Done for Homes Across Northern Minnesota</h2>
+            </div>
+            <div class="cs-image-group">
+                <picture class="cs-picture cs-picture1">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/small/roof-1.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/small/roof-1.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/small/roof-1.jpg" alt="mechaninc" width="345" height="345">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/small/roof-2.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/small/roof-2.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/small/roof-2.jpg" alt="mechaninc" width="345" height="345">
+                </picture>
+                <picture class="cs-picture cs-picture3">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/small/roof-3.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/small/roof-3.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/small/roof-3.jpg" alt="mechaninc" width="345" height="345">
+                </picture>
+                <picture class="cs-picture cs-picture4">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/small/roof-4.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/small/roof-4.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/small/roof-4.jpg" alt="mechaninc" width="345" height="345">
+                </picture>
+                <picture class="cs-picture cs-picture5">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/small/roof-8.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/small/roof-8.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/small/roof-8.jpg" alt="mechaninc" width="345" height="345">
+                </picture>
+                <picture class="cs-picture cs-picture6">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/small/roof-5.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/small/roof-5.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/small/roof-5.jpg" alt="mechaninc" width="345" height="345">
+                </picture>
+                <picture class="cs-picture cs-picture7">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/small/roof-6.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/small/roof-6.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/small/roof-6.jpg" alt="mechaninc" width="345" height="345">
+                </picture>
+                <picture class="cs-picture cs-picture8">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/small/roof-7.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/small/roof-7.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/small/roof-7.jpg" alt="mechaninc" width="345" height="345">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/cta.html' %}
+
+{% endblock %}

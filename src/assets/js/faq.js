@@ -5,3 +5,4 @@ const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
         }
         item.addEventListener('click', onClick)
         }
+                                

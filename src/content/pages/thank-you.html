@@ -1,0 +1,42 @@
+---
+title: 'Thank You | HCL Construction'
+description: 'Thank you for contacting HCL Construction. We have received your request and will respond shortly.'
+permalink: 'thank-you/'
+eleventyNavigation: false
+---
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/thank-you.css">
+    <link rel="stylesheet" href="/assets/css/root.css">
+{% endblock %}
+
+{% block body %}
+
+    <div class="thankyou-card">
+        <h1>Thank You!</h1>
+
+        <p>
+        Your request has been successfully received by HCL Construction.
+        </p>
+
+        <p>
+        We typically respond within an hour. If your matter is urgent,
+        please call us directly.
+        </p>
+
+        <a href="/" class="home-link">
+        Return to Homepage
+        </a>
+
+        <p style="margin-top:25px; font-size:14px;">
+        You will be redirected automatically in a few seconds.
+        </p>
+    </div>
+
+    <script>
+        setTimeout(function () {
+            window.location.href = "/";
+        }, 5000);
+    </script>
+
+{% endblock %}

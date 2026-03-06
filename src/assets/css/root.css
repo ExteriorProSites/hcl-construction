@@ -1,19 +1,23 @@
-/* CODESTITCH STYLES, RESET, HEADER/NAVIGATION AND FOOTER */
 /*-- -------------------------- -->
 <---        Core Styles         -->
 <--- -------------------------- -*/
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #078109;
-    --primaryLight: #f6f6ea;
-    --secondary: #084708;
-    --secondaryLight: #CBEAED;
-    --headerColor: #1a1a1a;
-    --bodyTextColor: #242424;
+    --primary: #00ee09;
+    --primaryLight: #07f70f;
+    --primaryDark: #06db0d;
+    --secondary: #1a1a1a;
+    --secondaryLight: #1d1d1d;
+    --tertiary: #8c8c8c;
+    --tertiaryLight: #c3c3c3;
+    --tertiaryDark: #737373;
+    --headerColor: #fafbfc;
+    --bodyTextColor: #fafbfc;
     --bodyTextColorWhite: #fafbfc;
     --backgroundOffset: #f7f7f7;
-    --buttonHover: #0c970f;
+    --buttonHover: #09c80f;
+    --overlay: #00ee09;
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
@@ -40,7 +44,7 @@
     font-size: var(--headerFontSize);
     line-height: 1.2em;
     font-weight: 900;
-    color: var(--headerColor);
+    color: #d8d8d8;
     text-align: inherit;
   }
   .cs-text {
@@ -49,31 +53,130 @@
     width: 100%;
     font-size: var(--bodyFontSize);
     line-height: 1.5em;
-    color: var(--bodyTextColor);
+    color: #c3c3c3;
     text-align: inherit;
   }
   .cs-button-solid {
-    z-index: 1;
-    position: relative;
-    display: inline-block;
-    background-color: var(--primary);
-    border-radius: 0.375rem;
-    color: white;
-    width: auto;
-    padding: 0 1.875rem;
-    text-decoration: none;
-    text-transform: uppercase;
     font-size: 1rem;
-    line-height: 3.125em;
-    font-weight: bold;
-    transition: background-color, color;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
     text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    color: var(--secondary);
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  .cs-button-solid:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: var(--primaryLight);
+    opacity: 1;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
   }
   .cs-button-solid:hover {
-    background-color: var(--buttonHover);
+    color: #000;
+  }
+  .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  .cs-button-white {
+    font-size: 1rem;
+    text-transform: uppercase;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--secondary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  .cs-button-white:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: var(--secondaryLight);
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.1875rem;
+    transition: width 0.3s;
+  }
+  .cs-button-white:hover:before {
+    width: 100%;
+  }
+  .cs-nav-button {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    color: var(--secondary);
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  .cs-nav-button:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: var(--primaryDark);
+    opacity: 1;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  .cs-nav-button:hover:before {
+    width: 100%;
   }
   .cs-hide-on-mobile {
     display: none;
+  }
+  .transparent {
+    visibility: hidden;
+  }
+  .bg-offset {
+    background: var(--secondaryLight);
+  }
+  .bg-main {
+    background: var(--secondary);
   }
 }
 /* Desktop - 1024px */
@@ -188,204 +291,85 @@
 /*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
-body,
-html {
-  /* reset margin and padding so there's no gap between the nav and the screen edges */
-  margin: 0;
-  padding: 0;
-}
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
   body.cs-open {
     overflow: hidden;
   }
-  body.scroll #cs-navigation .cs-top-container {
-    gap: 0;
-  }
-  body.scroll #cs-navigation .cs-top-social {
-    height: 0;
-    opacity: 0;
-    overflow: hidden;
-    visibility: hidden;
-  }
   #cs-navigation {
     width: 100%;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    background-color: white;
+    padding: 0.75rem 1rem;
+    background: var(--secondary);
+    box-shadow: 0px 8px 12px #0000003d;
     position: fixed;
     z-index: 10000;
-    box-shadow: 2px 2px 10px #0281ff1e;
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
   }
   #cs-navigation:before {
     content: "";
-    width: 0%;
-    height: 100vh;
+    width: 100%;
+    height: 0vh;
     background: rgba(0, 0, 0, 0.6);
-    position: absolute;
+    opacity: 0;
     display: block;
+    position: absolute;
     top: 100%;
     right: 0;
-    z-index: -11;
-    opacity: 0;
-    transition: width 0.5s, opacity 0.3s;
+    z-index: -1100;
+    transition: height 0.5s, opacity 0.5s;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
-  #cs-navigation.cs-active {
-    border-bottom-right-radius: 0rem;
-    border-bottom-left-radius: 0rem;
-  }
   #cs-navigation.cs-active:before {
+    height: 150vh;
     opacity: 1;
-    width: 100%;
   }
   #cs-navigation.cs-active .cs-ul-wrapper {
     opacity: 1;
-    transform: scaleX(1);
-    transition-delay: 0.2s;
+    transform: scaleY(1);
+    transition-delay: 0.15s;
   }
   #cs-navigation.cs-active .cs-li {
     opacity: 1;
-    transform: translateX(0);
-  }
-  #cs-navigation .cs-top-bar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #cs-navigation .cs-top-container {
-    width: 100%;
-    padding: 1rem 1rem 0;
-    /* prevents padding and border from affecting height and width */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    transition: visibility 0.3s, opacity 0.3s, height 0.3s, overflow 0.3s, padding 0.3s, gap 0.3s;
-    gap: 1rem;
-  }
-  #cs-navigation .cs-top-contact {
-    width: 100%;
-    padding-bottom: 1rem;
-    /* prevents padding and border from affecting height and width */
-    box-sizing: border-box;
-    border-bottom: 1px solid #e8e8e8;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    /* 16px - 20px */
-    gap: clamp(1rem, 2vw, 1.5rem);
-  }
-  #cs-navigation .cs-top-link {
-    font-size: 0.875rem;
-    line-height: 1.5em;
-    text-decoration: none;
-    margin: 0;
-    color: var(--bodyTextColor);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.5rem;
-    position: relative;
-  }
-  #cs-navigation .cs-top-link:nth-of-type(1) {
-    display: none;
-  }
-  #cs-navigation .cs-top-link:last-of-type:after {
-    display: none;
-  }
-  #cs-navigation .cs-top-link:after {
-    content: "";
-    width: 1px;
-    height: 1.5rem;
-    /* 8px - 16px */
-    margin-left: clamp(0.5rem, 1.5vw, 1rem);
-    background: #bababa;
-    opacity: 1;
-    position: relative;
-    display: block;
-  }
-  #cs-navigation .cs-link-icon {
-    width: 1rem;
-    height: auto;
-    display: block;
-  }
-  #cs-navigation .cs-top-social {
-    display: none;
-  }
-  #cs-navigation .cs-social-link {
-    color: transparent;
-    text-decoration: none;
-    width: 2rem;
-    height: 2rem;
-    background: var(--svgBackgroundAlt);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s;
-  }
-  #cs-navigation .cs-social-link:hover {
-    transform: translateY(-0.5rem);
-  }
-  #cs-navigation .cs-social-icon {
-    width: 0.75rem;
-    height: auto;
-    opacity: 1;
-    display: block;
+    transform: translateY(0);
   }
   #cs-navigation .cs-container {
     width: 100%;
-    /* 16px - 20px */
-    padding: clamp(1rem, 2.5vw, 1.25rem) 1rem;
-    /* prevents padding and border from affecting height and width */
-    box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    position: relative;
   }
   #cs-navigation .cs-logo {
-    /* 32px - 48px */
-    height: 4rem;
-    width: auto;
-    /* 32px - 48px */
+    width: 40%;
+    max-width: 4.375rem;
+    height: 100%;
     margin: 0 auto 0 0;
     /* prevents padding and border from affecting height and width */
-    padding: 0;
-    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    order: 1;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
   }
   #cs-navigation .cs-logo img {
-    width: auto;
+    width: 100%;
     height: 100%;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
   }
-  #cs-navigation .cs-nav {
-    order: 2;
-  }
   #cs-navigation .cs-toggle {
-    /* 48px - 56px */
-    width: clamp(3rem, 7.2vw, 3.5rem);
-    height: clamp(3rem, 7.2vw, 3.5rem);
+    /* 44px - 48px */
+    width: clamp(2.75rem, 6vw, 3rem);
+    height: clamp(2.75rem, 6vw, 3rem);
     margin: 0 0 0 auto;
-    background-color: var(--primary);
-    border-radius: 0.25rem;
+    background-color: transparent;
     border: none;
+    border-radius: 0.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.6s;
-  }
-  #cs-navigation .cs-toggle.cs-active {
-    transform: rotate(180deg);
   }
   #cs-navigation .cs-active .cs-line1 {
     top: 50%;
@@ -393,36 +377,36 @@ html {
   }
   #cs-navigation .cs-active .cs-line2 {
     top: 50%;
-    transform-origin: center;
     transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
+    transform-origin: center;
   }
   #cs-navigation .cs-active .cs-line3 {
-    bottom: 100%;
     opacity: 0;
+    bottom: 100%;
   }
   #cs-navigation .cs-box {
     /* 24px - 28px */
-    width: clamp(1.5rem, 2vw, 1.75rem);
-    height: 1rem;
+    width: clamp(1.7rem, 2vw, 1.9rem);
+    /* 14px - 16px */
+    height: clamp(1.3rem, 1.5vw, 1.5rem);
     position: relative;
   }
   #cs-navigation .cs-line {
     width: 100%;
-    height: 2px;
-    border-radius: 2px;
-    background-color: #fff;
+    height: 4px;
+    background-color: var(--primary);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
   #cs-navigation .cs-line1 {
     top: 0;
-    transform-origin: center;
     transition: transform 0.5s, top 0.3s, left 0.3s;
     animation-duration: 0.7s;
     animation-timing-function: ease;
-    animation-fill-mode: forwards;
     animation-direction: normal;
+    animation-fill-mode: forwards;
+    transform-origin: center;
   }
   #cs-navigation .cs-line2 {
     top: 50%;
@@ -430,49 +414,50 @@ html {
     transition: top 0.3s, left 0.3s, transform 0.5s;
     animation-duration: 0.7s;
     animation-timing-function: ease;
-    animation-fill-mode: forwards;
     animation-direction: normal;
+    animation-fill-mode: forwards;
   }
   #cs-navigation .cs-line3 {
     bottom: 0;
     transition: bottom 0.3s, opacity 0.3s;
   }
   #cs-navigation .cs-ul-wrapper {
-    min-width: 70vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
+    padding-bottom: 2.4em;
+    background-color: var(--secondary);
+    box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
     opacity: 0;
-    background-color: #fff;
-    overflow: hidden;
     position: absolute;
     top: 100%;
-    left: auto;
-    right: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    transform: scaleY(0);
     transition: transform 0.4s, opacity 0.3s;
-    transform: scaleX(0);
-    box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
-    transform-origin: top right;
+    transform-origin: top;
   }
   #cs-navigation .cs-ul {
-    margin: 0;
-    padding: 3rem clamp(1.75rem, 3vw, 2.5rem) 2rem 4.375rem;
     width: 100%;
     height: auto;
     max-height: 65vh;
-    overflow: scroll;
+    margin: 0;
+    padding: 3rem 0 0 0;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-    align-items: end;
+    justify-content: flex-start;
+    align-items: center;
     gap: 1.25rem;
+    overflow: auto;
   }
   #cs-navigation .cs-li {
-    width: 100%;
+    text-align: center;
     list-style: none;
+    width: 100%;
     margin-right: 0;
-    /* transition from these values */
-    transform: translateX(-2.5rem);
     opacity: 0;
-    text-align: right;
+    /* transition from these values */
+    transform: translateY(-4.375rem);
     transition: transform 0.6s, opacity 0.9s;
   }
   #cs-navigation .cs-li:nth-of-type(1) {
@@ -520,73 +505,28 @@ html {
     line-height: 1.2em;
     text-decoration: none;
     margin: 0;
-    color: var(--headerColor);
+    color: var(--bodyTextColorWhite);
     display: inline-block;
     position: relative;
   }
-  #cs-navigation .cs-li-link.cs-active {
-    color: var(--primary);
+  #cs-navigation .cs-li-link:before {
+    /* active state underline */
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    opacity: 1;
+    display: none;
+    position: absolute;
+    bottom: -0.125rem;
+    left: 0;
   }
-  #cs-navigation .cs-li-link:hover {
+  #cs-navigation .cs-li-link.cs-active:before {
+    display: block;
     color: var(--primary);
   }
   #cs-navigation .cs-button-solid {
     display: none;
-  }
-  #cs-navigation .cs-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  #cs-navigation .cs-desc {
-    font-size: 1rem;
-    line-height: 1.5em;
-    margin: 0;
-    color: var(--bodyTextColor);
-  }
-  #cs-navigation .cs-header {
-    font-size: 1.25rem;
-    line-height: 1.2em;
-    font-weight: 700;
-    margin: 0;
-    color: var(--headerColor);
-  }
-  body.scroll #cs-navigation .cs-top-container {
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    padding: 0;
-    gap: 0;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #cs-navigation .cs-top-container {
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #e8e8e8;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  #cs-navigation .cs-top-contact {
-    width: auto;
-    padding: 0;
-    border: none;
-  }
-  #cs-navigation .cs-donate {
-    display: flex;
-  }
-  #cs-navigation .cs-top-social {
-    height: 2rem;
-    opacity: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
-  }
-  #cs-navigation .cs-logo {
-    height: 5rem;
   }
 }
 /*-- -------------------------- -->
@@ -595,21 +535,20 @@ html {
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
   #cs-navigation .cs-li {
-    text-align: right;
+    text-align: center;
     width: 100%;
     display: block;
-    padding-right: 1.5rem;
+    color: var(--bodyTextColorWhite);
   }
   #cs-navigation .cs-dropdown {
+    color: var(--secondary);
     position: relative;
-    color: var(--bodyTextColorWhite);
   }
   #cs-navigation .cs-dropdown.cs-active .cs-drop-ul {
     height: auto;
+    padding-top: 1.25rem;
     opacity: 1;
     visibility: visible;
-    margin: 0.75rem 0 0 0;
-    padding: 0.75rem 0;
   }
   #cs-navigation .cs-dropdown.cs-active .cs-drop-link {
     opacity: 1;
@@ -618,51 +557,39 @@ html {
     position: relative;
     transition: opacity 0.3s;
   }
+  #cs-navigation .cs-dropdown-button {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    cursor: pointer;
+    appearance: none;
+  }
   #cs-navigation .cs-drop-icon {
+    width: 0.9375rem;
+    height: auto;
     position: absolute;
     top: 50%;
     right: -1.25rem;
     transform: translateY(-50%);
-    height: auto;
-    width: 0.9375rem;
   }
   #cs-navigation .cs-drop-ul {
     width: 100%;
     height: 0;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     opacity: 0;
-    visibility: hidden;
     display: flex;
-    justify-content: flex-start;
+    visibility: hidden;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 0.75rem;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.25rem;
+    overflow: hidden;
     transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, visibility 0.3s;
   }
   #cs-navigation .cs-drop-li {
     list-style: none;
-    background-color: #f7f7f7;
-    padding: 0.0625rem 0.5rem 0.0625rem;
-  }
-  #cs-navigation .cs-drop-li:hover {
-    color: var(--primary);
-  }
-  #cs-navigation .cs-li-link {
-    color: var(--headerColor);
-  }
-  #cs-navigation .cs-li-link.cs-drop-link {
-    /* 14px - 16px */
-    color: var(--headerColor);
-  }
-  #cs-navigation .cs-dropdown-button {
-    background-color: white;
-    border: none;
-    font-family: inherit;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    cursor: pointer;
-    appearance: none;
   }
 }
 /* Desktop - 1024px */
@@ -670,20 +597,31 @@ html {
   #cs-navigation .cs-dropdown {
     position: relative;
   }
-  #cs-navigation .cs-dropdown:hover {
+  #cs-navigation .cs-dropdown:hover,
+  #cs-navigation .cs-dropdown:focus-within {
     cursor: pointer;
   }
-  #cs-navigation .cs-dropdown:hover .cs-drop-ul {
-    transform: scaleY(1);
+  #cs-navigation .cs-dropdown:hover .cs-drop-ul,
+  #cs-navigation .cs-dropdown:focus-within .cs-drop-ul {
     opacity: 1;
     visibility: visible;
+    transform: scaleY(1);
   }
-  #cs-navigation .cs-dropdown:hover .cs-drop-li {
+  #cs-navigation .cs-dropdown:hover .cs-drop-li,
+  #cs-navigation .cs-dropdown:focus-within .cs-drop-li {
     opacity: 1;
     transform: translateY(0);
   }
+  #cs-navigation .cs-dropdown-button {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    appearance: none;
+  }
   #cs-navigation .cs-drop-icon {
-    width: 0.9375rem;
+    width: 0.75rem;
     height: auto;
     display: inline-block;
   }
@@ -691,27 +629,28 @@ html {
     min-width: 12.5rem;
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
+    background-color: var(--secondary);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
+    opacity: 0;
     border-bottom: 5px solid var(--primary);
+    visibility: hidden;
     /* if you have 8 or more links in your dropdown nav, uncomment the columns property to make the list into 2 even columns. Change it to 3 or 4 if you need extra columns. Then remove the transition delays on the cs-drop-li so they don't have weird scattered animations */
     position: absolute;
     top: 100%;
     z-index: -100;
+    overflow: hidden;
     transform: scaleY(0);
-    transform-origin: top;
     transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
+    transform-origin: top;
   }
   #cs-navigation .cs-drop-li {
-    list-style: none;
     font-size: 1rem;
     text-decoration: none;
-    opacity: 0;
+    list-style: none;
     width: 100%;
     height: auto;
+    color: var(--bodyTextColorWhite);
+    opacity: 0;
     display: block;
     transform: translateY(-0.625rem);
     transition: opacity 0.6s, transform 0.6s;
@@ -743,45 +682,26 @@ html {
   #cs-navigation .cs-drop-li:nth-of-type(9) {
     transition-delay: 0.45s;
   }
-  #cs-navigation .cs-drop-li:nth-of-type(10) {
-    transition-delay: 0.5s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(11) {
-    transition-delay: 0.55s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(12) {
-    transition-delay: 0.6s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(13) {
-    transition-delay: 0.65s;
-  }
   #cs-navigation .cs-li-link.cs-drop-link {
     font-size: 1rem;
-    white-space: nowrap;
     line-height: 1.5em;
     text-decoration: none;
+    white-space: nowrap;
     width: 100%;
-    padding: 0.75rem;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    color: var(--bodyTextColor);
+    padding: 0.75rem;
+    color: var(--bodyTextColorWhite);
     display: block;
     transition: color 0.3s, background-color 0.3s;
   }
-  #cs-navigation .cs-li-link.cs-drop-link:hover {
-    color: var(--primary);
-    background-color: #f7f7f7;
+  #cs-navigation .cs-li-link.cs-drop-link:hover,
+  #cs-navigation .cs-li-link.cs-drop-link:focus {
+    background-color: #3f3f3f;
+    outline: none;
   }
   #cs-navigation .cs-li-link.cs-drop-link:before {
     display: none;
-  }
-  #cs-navigation .cs-dropdown-button {
-    border: none;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-    appearance: none;
   }
 }
 /*-- -------------------------- -->
@@ -789,124 +709,24 @@ html {
 <--- -------------------------- -*/
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  body.scroll #cs-navigation .cs-top-container {
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    padding: 0;
-    gap: 0;
-  }
-  body.scroll #cs-navigation .cs-top-social {
-    height: 0;
-    opacity: 0;
-    overflow: hidden;
-    visibility: hidden;
-  }
   #cs-navigation {
     width: 100%;
-    padding: 0;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
+    padding: 0 1rem;
+    background: var(--secondary);
     position: fixed;
     z-index: 10000;
-    background-color: white;
-    box-shadow: 2px 2px 10px #0281ff18;
+    /* Animate shadow and background smoothly */
+    transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
   }
-  #cs-navigation .cs-top-bar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #cs-navigation .cs-top-container {
-    width: 100%;
-    max-width: 107.5rem;
-    padding: 1rem;
-    /* prevents padding and border from affecting height and width */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3.125rem;
-    transition: visibility 0.3s, opacity 0.3s, height 0.3s, overflow 0.3s, padding 0.3s, gap 0.3s;
-  }
-  #cs-navigation .cs-top-contact {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  #cs-navigation .cs-top-link {
-    font-size: 0.875rem;
-    line-height: 1.5em;
-    text-decoration: none;
-    margin: 0;
-    color: var(--bodyTextColor);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.5rem;
-    position: relative;
-  }
-  #cs-navigation .cs-top-link:hover {
-    text-decoration: underline;
-  }
-  #cs-navigation .cs-top-link:last-of-type:after {
-    display: none;
-  }
-  #cs-navigation .cs-top-link:after {
-    content: "";
-    width: 1px;
-    height: 1.5rem;
-    /* 8px - 16px */
-    margin-left: clamp(0.5rem, 1.5vw, 1rem);
-    background: #bababa;
-    opacity: 1;
-    position: relative;
-    display: block;
-  }
-  #cs-navigation .cs-link-icon {
-    width: 1rem;
-    height: auto;
-    display: block;
-  }
-  #cs-navigation .cs-top-social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    transition: visibility 0.3s, opacity 0.3s, height 0.3s, overflow 0.3s, padding 0.3s, gap 0.3s;
-  }
-  #cs-navigation .cs-social-link {
-    text-decoration: none;
-    color: transparent;
-    width: 2rem;
-    height: 2rem;
-    background: var(--svgBackgroundAlt);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s;
-  }
-  #cs-navigation .cs-social-link:hover {
-    transform: translateY(-0.5rem);
-  }
-  #cs-navigation .cs-social-icon {
-    width: 0.75rem;
-    height: auto;
-    opacity: 1;
-    display: block;
+  #cs-navigation.scrolled {
+    box-shadow: 0px 8px 12px #00000025;
   }
   #cs-navigation .cs-container {
-    position: relative;
     width: 100%;
-    max-width: 107.5rem;
+    max-width: 80rem;
     margin: auto;
-    padding: 0 1rem;
-    /* prevents padding from affecting height */
-    box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -916,11 +736,15 @@ html {
     display: none;
   }
   #cs-navigation .cs-logo {
-    max-width: 12.3125rem;
-    height: 5rem;
+    width: 18.4%;
+    max-width: 21.875rem;
+    height: 4.0625rem;
     /* margin-right auto pushes everything away from it to the right */
     margin: 0 auto 0 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 100;
   }
   #cs-navigation .cs-logo img {
@@ -936,84 +760,46 @@ html {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 2.5rem;
+    /* 20px - 36px */
+    gap: clamp(1.25rem, 2.6vw, 2.25rem);
+    font-weight: 900;
   }
   #cs-navigation .cs-li {
     list-style: none;
-    padding: 2.25rem 0;
+    padding: 2rem 0;
     /* prevent flexbox from squishing it */
     flex: none;
+    font-weight: 900;
   }
   #cs-navigation .cs-li-link {
     /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.3vw, 1rem);
+    font-size: clamp(0.875rem, 1vw, 1rem);
+    font-weight: 900;
     line-height: 1.5em;
     text-decoration: none;
     margin: 0;
-    color: var(--bodyTextColor);
+    color: var(--bodyTextColorWhite);
     display: block;
     position: relative;
-    transition: color 0.3s;
   }
-  #cs-navigation .cs-li-link:hover {
-    color: var(--primary);
+  #cs-navigation .cs-li-link:hover:before {
+    width: 100%;
   }
-  #cs-navigation .cs-li-link.cs-active {
-    font-weight: 700;
-    color: var(--headerColor);
+  #cs-navigation .cs-li-link.cs-active:before {
+    width: 100%;
   }
-  #cs-navigation .cs-donate {
-    text-decoration: none;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  #cs-navigation .cs-donate:hover .cs-donate-icon {
-    transform: scale(1.1);
-  }
-  #cs-navigation .cs-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  #cs-navigation .cs-donate-icon {
-    width: 3.5rem;
-    height: auto;
-    transition: transform 0.3s;
-  }
-  #cs-navigation .cs-desc {
-    font-size: 1rem;
-    line-height: 1.5em;
-    margin: 0;
-    color: var(--bodyTextColor);
-  }
-  #cs-navigation .cs-header {
-    font-size: 1.25rem;
-    line-height: 1.2em;
-    font-weight: 700;
-    margin: 0;
-    color: var(--headerColor);
-  }
-  #cs-navigation .cs-nav-button {
-    padding: 0 3rem;
-    display: none;
-  }
-}
-/* Large Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-  #cs-navigation .cs-container {
-    justify-content: space-between;
-  }
-  #cs-navigation .cs-nav-button {
-    margin-left: auto;
+  #cs-navigation .cs-li-link:before {
+    /* active state underline */
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    opacity: 1;
     display: block;
-  }
-}
-/* Larger Desktop - 1600px */
-@media only screen and (min-width: 100rem) {
-  #cs-navigation .cs-nav-button {
-    margin: 0;
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    transition: width 0.3s;
   }
 }
 /*-- -------------------------- -->
@@ -1029,7 +815,7 @@ html {
     justify-content: center;
     align-items: center;
     min-height: 30vh;
-    padding-top: 3.125rem;
+    padding-top: 5.625rem;
   }
   #int-hero picture {
     z-index: -2;
@@ -1050,12 +836,11 @@ html {
   #int-hero h1 {
     position: relative;
     margin: 0 auto;
-    margin-top: 4.375rem;
-    margin-bottom: 1.875rem;
-    max-width: 31.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 96%;
     font-size: 2.13333333rem;
-    color: #fff;
+    color: var(--headerColor);
     text-align: center;
   }
   #int-hero p {
@@ -1073,7 +858,7 @@ html {
     top: 0;
     left: 0;
     content: "";
-    opacity: 0.7;
+    opacity: 0.78;
     display: block;
     background: #000;
     height: 100%;
@@ -1108,6 +893,7 @@ html {
   #cta-52 {
     padding: var(--sectionPadding);
     position: relative;
+    background: var(--secondary);
   }
   #cta-52 .cs-container {
     width: 100%;
@@ -1122,6 +908,7 @@ html {
     /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
     position: relative;
+    z-index: 1;
   }
   #cta-52 .cs-content {
     /* set text align to left if content needs to be left aligned */
@@ -1135,7 +922,7 @@ html {
   }
   #cta-52 .cs-title,
   #cta-52 .cs-text {
-    color: var(--bodyTextColorWhite);
+    color: var(--headerColor);
   }
   #cta-52 .cs-text {
     margin: 0 0 2rem 0;
@@ -1149,6 +936,7 @@ html {
     top: 0;
     left: 0;
     z-index: -1;
+    box-shadow: 2px 2px 10px #09090976;
   }
   #cta-52 .cs-picture:before {
     /* black color overlay */
@@ -1157,12 +945,11 @@ html {
     display: block;
     height: 100%;
     width: 100%;
-    background: #020209;
-    opacity: 0.6;
+    background: var(--secondaryLight);
+    opacity: 0.92;
     top: 0;
     left: 0;
     z-index: 1;
-    border-radius: 0.75rem;
   }
   #cta-52 .cs-picture img {
     position: absolute;
@@ -1171,7 +958,6 @@ html {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: 0.75rem;
   }
 }
 /*-- -------------------------- -->
@@ -1180,10 +966,11 @@ html {
 /* Mobile */
 @media only screen and (min-width: 0rem) {
   #footer {
-    background: var(--backgroundOffset);
+    background: var(--secondary);
     padding: 5.25rem 0 calc(20 / 16 * 1rem);
     font-size: min(4vw, 1.2em);
     position: relative;
+    border-top: 1px solid #232323c7;
   }
   #footer .left-section {
     margin: auto;
@@ -1207,9 +994,9 @@ html {
     opacity: 0.9;
     margin: auto;
     width: 100%;
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.92857143rem;
-    color: var(--headerColor);
+    color: var(--bodyTextColorWhite);
     text-align: center;
   }
   #footer .right-section {
@@ -1235,12 +1022,12 @@ html {
     margin-bottom: 0.75rem;
     list-style: none;
     font-size: 1.125rem;
-    color: var(--headerColor);
+    color: var(--bodyTextColorWhite);
   }
   #footer .right-section .lists ul li a {
     text-decoration: none;
     line-height: 1.16666667em;
-    color: var(--headerColor);
+    color: var(--bodyTextColorWhite);
     transition: color 0.3s;
   }
   #footer .right-section .lists ul li a:hover {
@@ -1253,7 +1040,7 @@ html {
     font-size: 1.125rem;
     line-height: 1.16666667em;
     font-weight: bold;
-    color: var(--headerColor);
+    color: var(--bodyTextColorWhite);
   }
   #footer .right-section .lists ul h2:before {
     position: absolute;
@@ -1294,13 +1081,13 @@ html {
     width: 96%;
     font-size: 1rem;
     line-height: 2.25rem;
-    color: var(--headerColor);
+    color: var(--bodyTextColorWhite);
     text-align: center;
   }
   #footer .credit a {
     text-decoration: none;
     font-size: 1rem;
-    color: var(--bodyTextColor);
+    color: var(--primary);
   }
   #footer .credit a:hover {
     text-decoration: underline;
