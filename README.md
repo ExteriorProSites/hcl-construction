@@ -1,62 +1,36 @@
 <br/>
-<p align="center">
-  <a href="https://codestitch.app/">
-    <img src="https://codestitch.app/frontend/images/icon.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Intermediate Starter Kit (LESS)</h3>
-
-  <p align="center">
-    Introducing the Intermediate Website Kit, presented by CodeStitch. This kit includes a pre-configured Eleventy environment with Nunjucks templating, along with seamless integration of Decap CMS. This setup allows you to quickly start a project while providing your client with a blog for content management. Everything is ready to go right from the start, offering a fantastic introduction to the advantages of a Static Site Generator, complete with LESS preprocessing.
-    <br/>
-    <br/>
-    <a href="https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-SASS">SASS Starter Kit</a>
-    .
-    <a href="https://codestitch-intermediate.netlify.app/">View Live Result</a>
-    .
-    <a href="https://www.youtube.com/watch?v=0BNCYM4InT0&t">Watch Video</a>
-    .
-    <a href="https://codestitch.app/contact">Report Bug</a>
-  </p>
-</p>
+<div align="center">
+  <h3 align="center">User Manual</h3>
+</div>
 
 ## Table of Contents
 
--   <a href="#overview">Overview</a>
--   <a href="#prerequisites">Prerequisites</a>
-    -   <a href="#must-knows">Must Knows</a>
-    -   <a href="#good-to-knows">Good-to-knows</a>
--   <a href="#quick-start-guide">Quick Start Guide</a>
--   <a href="#explanation-of-file-structure">Explanation of File Structure</a>
-    -   <a href="#root-files">Root Files</a>
-        -   <a href="#eleventyjs">.eleventy.js</a>
-        -   <a href="#netlifytoml">netlify.toml</a>
-        -   <a href="#packagejson-and-package-lockjson">package.json and package-lock.json</a>
-    -   <a href="#nodemodules">node_modules/</a>
-    -   <a href="#public">public/</a>
-    -   <a href="#src">src/</a>
-        -   <a href="#_data">\_data/</a>
-        -   <a href="#_includes">\_includes</a>
-            -   <a href="#nav-auto">Navigations \- Rendering Automatically</a>
-            -   <a href="#nav-manual">Navigations \- Rendering Manually</a>
-    -   <a href="#admin">admin/</a>
-    -   <a href="#assets">assets/</a>
-    -   <a href="#config">config/</a>
-    -   <a href="#content">content/</a>
-    -   <a href="#root-src-files">Root src/ Files</a>
-        -   <a href="#redirects">\_redirects</a>
-        -   <a href="#indexhtml">index.html</a>
-        -   <a href="#robotshtml">robots.html</a>
-        -   <a href="#sitemaphtml">sitemap.html</a>
--   <a href="#deployment">Deployment</a>
-
-<a name="overview"></a>
-
-## Overview
-
-The Intermediate Website Kit builds off the beginner kits, mainly by including a pre-configured [Eleventy](https://www.11ty.dev) environment. This setup allows for reusable components, centralized data, and greater scalability as your clients grow. Additionally, a blog has been provided through [Decap CMS](https://decapcms.org/), enabling your clients to manage their own content. This can easily be adapted to various use cases, such as menus, job listing boards, portfolios, and more. A few additional plugins have also been included to enhance the developer experience, offering HTML/CSS minification, JS bundling/minification, and automatic sitemap generation.
-
-An example website is also provided, with easy substitution of website sections through the use of [CodeStitch's vanilla component library](https://codestitch.app/). This kit aims to get any project off the ground as quickly as possible, with deployment achievable in as little as two minutes, including CMS hosting.
+- <a href="#prerequisites">Prerequisites</a>
+  - <a href="#must-knows">Must Knows</a>
+  - <a href="#good-to-knows">Good-to-knows</a>
+- <a href="#quick-start-guide">Quick Start Guide</a>
+- <a href="#explanation-of-file-structure">Explanation of File Structure</a>
+  - <a href="#root-files">Root Files</a>
+    - <a href="#eleventyjs">.eleventy.js</a>
+    - <a href="#netlifytoml">netlify.toml</a>
+    - <a href="#packagejson-and-package-lockjson">package.json and package-lock.json</a>
+  - <a href="#nodemodules">node_modules/</a>
+  - <a href="#public">public/</a>
+  - <a href="#src">src/</a>
+    - <a href="#_data">\_data/</a>
+    - <a href="#_includes">\_includes</a>
+      - <a href="#nav-auto">Navigations \- Rendering Automatically</a>
+      - <a href="#nav-manual">Navigations \- Rendering Manually</a>
+  - <a href="#admin">admin/</a>
+  - <a href="#assets">assets/</a>
+  - <a href="#config">config/</a>
+  - <a href="#content">content/</a>
+  - <a href="#root-src-files">Root src/ Files</a>
+    - <a href="#redirects">\_redirects</a>
+    - <a href="#indexhtml">index.html</a>
+    - <a href="#robotshtml">robots.html</a>
+    - <a href="#sitemaphtml">sitemap.html</a>
+- <a href="#deployment">Deployment</a>
 
 <a name="prerequisites"></a>
 
@@ -68,10 +42,10 @@ An example website is also provided, with easy substitution of website sections 
 
 _Knowledge requirements before using the kit_
 
--   HTML/CSS
--   Beginner-level JS
--   Familiarity with working in a NodeJS-powered project (handling dependencies with npm, source vs built files, etc)
--   Familiarity with templating languages (this kit uses Nunjucks)
+- HTML/CSS
+- Beginner-level JS
+- Familiarity with working in a NodeJS-powered project (handling dependencies with npm, source vs built files, etc)
+- Familiarity with templating languages (this kit uses Nunjucks)
 
 <a name="good-to-knows"></a>
 
@@ -79,14 +53,14 @@ _Knowledge requirements before using the kit_
 
 _Not required for light-medium kit usage, but helpful if you want to customise the kit beyond base functionality_
 
--   Nunjucks ([Docs found here](https://mozilla.github.io/nunjucks/))
-    -   If you've never used Nunjucks before, [this excellent article by Hyunbin](https://hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95) explains how to set up VSCode to best support Nunjucks, including formatting, syntax highlighting and Emmet.
--   Eleventy ([Docs found here](https://www.11ty.dev/docs/)). Key topics include:
-    -   [The Data Cascade](https://www.11ty.dev/docs/data-cascade/)
-    -   [Layouts](https://www.11ty.dev/docs/layouts/)
-    -   [Permalinks](https://www.11ty.dev/docs/permalinks/)
-    -   [Passthroughs](https://www.11ty.dev/docs/copy/)
--   Decap CMS ([Docs found here](https://decapcms.org/docs/intro/))
+- Nunjucks ([Docs found here](https://mozilla.github.io/nunjucks/))
+  - If you've never used Nunjucks before, [this excellent article by Hyunbin](https://hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95) explains how to set up VSCode to best support Nunjucks, including formatting, syntax highlighting and Emmet.
+- Eleventy ([Docs found here](https://www.11ty.dev/docs/)). Key topics include:
+  - [The Data Cascade](https://www.11ty.dev/docs/data-cascade/)
+  - [Layouts](https://www.11ty.dev/docs/layouts/)
+  - [Permalinks](https://www.11ty.dev/docs/permalinks/)
+  - [Passthroughs](https://www.11ty.dev/docs/copy/)
+- Decap CMS ([Docs found here](https://decapcms.org/docs/intro/))
 
 <a name="quick-start-guide"></a>
 
@@ -152,14 +126,14 @@ The heart of the kit, the `.eleventy.js` file configures the Eleventy static sit
 
 The `.eleventy.js` file is well-documented, with all necessary extra documentation provided for extra reading if desired. A full list of functionalities added via `.eleventy.js` is given below:
 
--   Sets up CSS and JS as template languages, allowing modification at build time by Eleventy. JS is bundled and minified by esbuild.
--   Adds the following plugins:
-    -   [Eleventy Navigation](https://github.com/11ty/eleventy-navigation) - Allows the option to define navigation data within the template front matter.
-    -   [Eleventy Sitemap](https://www.npmjs.com/package/@quasibit/eleventy-plugin-sitemap) - Automatically generates a sitemap from all files in `./src/content`.
-    -   [Eleventy Minification](https://github.com/benjaminrancourt/eleventy-plugin-files-minifier) - Minifies HTML and CSS (only run in production - when `npm run build` is executed).
--   Passes through all assets (in `./src/assets`) without modification by Eleventy.
--   Adds date formatting filters and a year shortcode.
--   Sets some basic server options.
+- Sets up CSS and JS as template languages, allowing modification at build time by Eleventy. JS is bundled and minified by esbuild.
+- Adds the following plugins:
+  - [Eleventy Navigation](https://github.com/11ty/eleventy-navigation) - Allows the option to define navigation data within the template front matter.
+  - [Eleventy Sitemap](https://www.npmjs.com/package/@quasibit/eleventy-plugin-sitemap) - Automatically generates a sitemap from all files in `./src/content`.
+  - [Eleventy Minification](https://github.com/benjaminrancourt/eleventy-plugin-files-minifier) - Minifies HTML and CSS (only run in production - when `npm run build` is executed).
+- Passes through all assets (in `./src/assets`) without modification by Eleventy.
+- Adds date formatting filters and a year shortcode.
+- Sets some basic server options.
 
 <a name="netlifytoml"></a>
 
@@ -267,13 +241,13 @@ The CMS is configured through a `config.yml` file, as per the Decap documentatio
 
 All other non-content files are stored in `assets/`, which is set up in `.eleventy.js` to be passed through to `public/`. A brief overview of each of the folders within `assets/`, and any relevant notes, is provided below:
 
--   `css/` - SASS/LESS files from the `less/` or `sass/` directories are built into `css/`. From here, the CSS is processed as an Eleventy template, where we minify the code (production only), and pass it through to `public/`. **Do not** make CSS changes here - instead, use the SASS or LESS asset directory (depending on which kit you're using).
--   `favicons/` - Any favicon files can be stored here. We recommend using [this tool](https://realfavicongenerator.net/) to generate favicons for all devices.
--   `fonts/` - If you have any non-standard fonts you wish to locally host, you can put the files here. You can use [this tool](https://gwfh.mranftl.com/fonts) to download font files to be stored in `fonts/`, as well as generate the code to be put in your `root.scss` or `root.less` file.
--   `images/` - Any images can go here. No processing will occur.
--   `js/` - Put any JavaScript in this directory. It will be processed, bundled, and minified by esbuild.
--   `sass/` or `less/` - Depending on whether you're using the SASS or LESS version of the kit, you'll find your preprocessor files in one of these directories. Make your changes to styling here, not in `assets/css`
--   `svgs/` - A separate directory for SVGs. This makes it easier to bulk-compress SVGs separate from `images/` if you're using a tool like [compressor.io](https://compressor.io/).
+- `css/` - SASS/LESS files from the `less/` or `sass/` directories are built into `css/`. From here, the CSS is processed as an Eleventy template, where we minify the code (production only), and pass it through to `public/`. **Do not** make CSS changes here - instead, use the SASS or LESS asset directory (depending on which kit you're using).
+- `favicons/` - Any favicon files can be stored here. We recommend using [this tool](https://realfavicongenerator.net/) to generate favicons for all devices.
+- `fonts/` - If you have any non-standard fonts you wish to locally host, you can put the files here. You can use [this tool](https://gwfh.mranftl.com/fonts) to download font files to be stored in `fonts/`, as well as generate the code to be put in your `root.scss` or `root.less` file.
+- `images/` - Any images can go here. No processing will occur.
+- `js/` - Put any JavaScript in this directory. It will be processed, bundled, and minified by esbuild.
+- `sass/` or `less/` - Depending on whether you're using the SASS or LESS version of the kit, you'll find your preprocessor files in one of these directories. Make your changes to styling here, not in `assets/css`
+- `svgs/` - A separate directory for SVGs. This makes it easier to bulk-compress SVGs separate from `images/` if you're using a tool like [compressor.io](https://compressor.io/).
 
 <a name="config"></a>
 
