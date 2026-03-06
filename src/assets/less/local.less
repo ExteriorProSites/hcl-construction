@@ -1182,7 +1182,7 @@
                 top: -70px;      // move map up to hide header
                 left: 0;
                 width: 100%;
-                height: calc(100% + 60px); // compensate for shift
+                height: calc(100% + 70px); // compensate for shift
                 border: 0;
                 pointer-events: none; 
             }
@@ -1204,7 +1204,7 @@
             width: 100%;
             text-align: center;
             background-color: var(--secondaryLight);
-            box-shadow: 2px 2px 20px #0909097e;
+            box-shadow: 2px 2px 5px #0909097e;
             padding: clamp(1rem, 2.3vw, 1.25rem);
             display: flex;
             align-items: center;
@@ -1213,17 +1213,17 @@
             grid-column: span 12;
             transition: box-shadow .3s;
 
+            .cs-item-text {
+                transition: color .3s;
+            }
+
+            &:hover {
+                box-shadow: 2px 2px 10px #090909d2;
+
                 .cs-item-text {
-                    transition: color .3s;
+                    color: var(--primary);
                 }
-
-                &:hover {
-                    box-shadow: 2px 2px 25px #090909d2;
-
-                    .cs-item-text {
-                        color: var(--primary);
-                    }
-                }
+            }
         }
 
         .cs-item-text {
@@ -1269,6 +1269,11 @@
 
         .cs-item {
             grid-column: span 3;
+            box-shadow: 2px 2px 5px #0909097e;
+
+            &:hover {
+                box-shadow: 2px 2px 10px #090909d2;
+            }
         }
     }
 }

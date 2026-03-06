@@ -1005,7 +1005,7 @@
     top: -70px;
     left: 0;
     width: 100%;
-    height: calc(100% + 60px);
+    height: calc(100% + 70px);
     border: 0;
     pointer-events: none;
   }
@@ -1024,7 +1024,7 @@
     width: 100%;
     text-align: center;
     background-color: var(--secondaryLight);
-    box-shadow: 2px 2px 20px #0909097e;
+    box-shadow: 2px 2px 5px #0909097e;
     padding: clamp(1rem, 2.3vw, 1.25rem);
     display: flex;
     align-items: center;
@@ -1037,7 +1037,7 @@
     transition: color 0.3s;
   }
   #contact-2320 .cs-item:hover {
-    box-shadow: 2px 2px 25px #090909d2;
+    box-shadow: 2px 2px 10px #090909d2;
   }
   #contact-2320 .cs-item:hover .cs-item-text {
     color: var(--primary);
@@ -1075,6 +1075,10 @@
   }
   #contact-2320 .cs-item {
     grid-column: span 3;
+    box-shadow: 2px 2px 5px #0909097e;
+  }
+  #contact-2320 .cs-item:hover {
+    box-shadow: 2px 2px 10px #090909d2;
   }
 }
 /*-- -------------------------- -->
