@@ -45,7 +45,7 @@
             font-weight: 700;
             line-height: 1.5em;
             margin: 0 0 (12/16rem);
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
         }
 
         .cs-ul {
@@ -64,7 +64,7 @@
             list-style: none;
             /* 20px - 24px */
             padding-left: clamp(1.25rem, 3vw, 1.5rem);
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
             position: relative;
 
             &::before {
@@ -210,7 +210,7 @@
             list-style: none;
             /* 20px - 24px */
             padding-left: clamp(1.25rem, 3vw, 1.5rem);
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
             position: relative;
 
             &::before {
@@ -301,7 +301,7 @@
         .cs-desc {
             font-size: (16/16rem);
             line-height: 1.5em;
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
         }
     }
 }
@@ -477,7 +477,7 @@
             width: 100%;
             /* prevents padding and border from affecting height and width */
             box-sizing: border-box;
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
             font-size: clamp(0.875rem, 1.5vw, 1rem);
             line-height: 1.5em;
             text-align: inherit;
@@ -492,7 +492,7 @@
             font-size: (16/16rem);
             line-height: 1.2em;
             font-weight: 700;
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
             text-align: inherit;
             margin-top: (20/16rem);
             transition: color 0.3s;
@@ -589,7 +589,7 @@
                 /* list line connector */
                 content: "";
                 width: 1px;
-                background: var(--tertiaryLight);
+                background: var(--bodyTextColorWhite);
                 opacity: 1;
                 position: absolute;
                 display: block;
@@ -634,7 +634,7 @@
                 content: "";
                 width: (8/16rem);
                 height: (8/16rem);
-                background: var(--tertiaryLight);
+                background: var(--bodyTextColorWhite);
                 border-radius: 50%;
                 opacity: 1;
                 position: absolute;
@@ -651,7 +651,7 @@
             font-weight: 700;
             line-height: 1.5em;
             margin: 0;
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
             margin-top: (8/16rem);
         }
     }
@@ -764,12 +764,8 @@
             }
         }
 
-        .cs-submit {
-            width: 100%;
-            padding: 0 (32/16rem);
-            border: none;
-            /* prevents flexbox from squishing it */
-            flex: none;
+        .cs-button-solid {
+            z-index: 20;
         }
 
         .cs-background {
@@ -869,6 +865,7 @@
 
         .cs-submit {
             width: auto;
+
         }
 
         .cs-background {
@@ -993,7 +990,7 @@
         .cs-li {
             list-style: none;
             margin: 0;
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
@@ -1170,7 +1167,7 @@
 
             iframe {
                 position: absolute;
-                top: -60px;      // move map up to hide header
+                top: -70px;      // move map up to hide header
                 left: 0;
                 width: 100%;
                 height: calc(100% + 60px); // compensate for shift
@@ -1218,7 +1215,7 @@
         }
 
         .cs-item-text {
-            color: var(--tertiaryLight)
+            color: var(--bodyTextColorWhite)
         }
         
         .cs-icon {
@@ -1348,7 +1345,7 @@
             font-size: clamp(0.875rem, 1.6vw, 1rem);
             line-height: 1.5em;
             margin: 0 0 (28/16rem) 0;
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
         }
 
         .cs-flex-group {
@@ -1397,7 +1394,7 @@
             line-height: 1.5em;
             font-weight: 400;
             margin: 0;
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
             display: block;
         }
     }
@@ -1601,7 +1598,7 @@
             box-sizing: border-box;
             padding: 0 (24/16rem);
             opacity: 0;
-            color: var(--tertiaryLight);
+            color: var(--bodyTextColorWhite);
             /* clips the text so it doesn't show up */
             overflow: hidden;
             transition:
