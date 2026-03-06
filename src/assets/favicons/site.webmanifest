@@ -1,6 +1,6 @@
 {
-  "name": "Lakes Area Landscaping",
-  "short_name": "L.A.L.",
+  "name": "HCL Construction",
+  "short_name": "HCL",
   "icons": [
     {
       "src": "/assets/favicons/web-app-manifest-192x192.png",
@@ -16,6 +16,6 @@
     }
   ],
   "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "background_color": "#3a3a3a",
   "display": "standalone"
 }
